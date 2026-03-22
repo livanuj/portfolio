@@ -1,7 +1,7 @@
-import React from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { skillCategories } from "@/data/techSkills";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/utils";
+import React from "react";
 
 export const TechSkills: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();

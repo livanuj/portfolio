@@ -9,7 +9,7 @@ const professionalProjects: Project[] = [
     period: "Mar 2023 – Mar 2026",
     description:
       "Built internal workflow tools and customer-facing applications for digital onboarding and document automation. Developed scalable UI components with React, TypeScript, and Next.js supporting complex multi-step workflows, dynamic forms (15+ field types), and rich-text editing with ProseMirror/TipTap.",
-    link: "/work/smartflow",
+    // link: "/work/smartflow",
     tags: [
       "React",
       "TypeScript",
@@ -64,21 +64,21 @@ const freelanceProjects: Project[] = [
   },
 ];
 
-const demoProjects: Project[] = [
-  {
-    title: "Workflow Builder",
-    role: "Personal Project",
-    type: "Interactive Demo",
-    period: "2024",
-    description:
-      "An interactive drag-and-drop workflow builder showcasing complex state management, dynamic UI updates, and real-time validation. Features reorderable steps, inline editing, and system design patterns used in enterprise applications.",
-    link: "/workflow-builder",
-    tags: ["React", "TypeScript", "Zustand", "dnd-kit", "Zod"],
-  },
-];
+// const demoProjects: Project[] = [
+//   {
+//     title: "Workflow Builder",
+//     role: "Personal Project",
+//     type: "Interactive Demo",
+//     period: "2024",
+//     description:
+//       "An interactive drag-and-drop workflow builder showcasing complex state management, dynamic UI updates, and real-time validation. Features reorderable steps, inline editing, and system design patterns used in enterprise applications.",
+//     link: "/workflow-builder",
+//     tags: ["React", "TypeScript", "Zustand", "dnd-kit", "Zod"],
+//   },
+// ];
 
 export const portfolioData = {
   professional: professionalProjects,
   freelance: freelanceProjects,
-  demos: demoProjects,
+  // demos: demoProjects,
 };

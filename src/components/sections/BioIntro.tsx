@@ -1,7 +1,7 @@
-import React from "react";
+import { bioIntroParagraphs } from "@/data/bioIntro";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/utils";
-import { bioIntroParagraphs } from "@/data/bioIntro";
+import React from "react";
 
 export const BioIntro: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();

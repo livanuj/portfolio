@@ -18,7 +18,7 @@ export const smartflowData: ProjectShowcaseData = {
         "Developed a flexible form builder supporting 15+ field types including text, number, " +
         "date pickers, dropdowns, file uploads, and signature fields. Implemented real-time " +
         "validation, conditional logic, and field dependencies using Zod for schema validation.",
-         // screenshot: {
+      // screenshot: {
       //   src: "/screenshots/smartflow-form-builder.png",
       //   alt: "Dynamic Form Builder Interface"
       // }
@@ -29,7 +29,7 @@ export const smartflowData: ProjectShowcaseData = {
         "Built intuitive multi-step workflow interfaces with progress tracking, step validation, " +
         "and state management using Zustand. Implemented draft saving, auto-save functionality, " +
         "and seamless navigation between workflow steps.",
-        // screenshot: {
+      // screenshot: {
       //   src: "/screenshots/smartflow-workflow.png",
       //   alt: "Workflow Step Navigation"
       // }
@@ -40,7 +40,7 @@ export const smartflowData: ProjectShowcaseData = {
         "Integrated ProseMirror and TipTap for powerful document editing capabilities. " +
         "Implemented custom extensions for templates, variables, and dynamic content insertion. " +
         "Added collaborative editing features and document versioning.",
-        // screenshot: {
+      // screenshot: {
       //   src: "/screenshots/smartflow-rich-text-editor.png",
       //   alt: "Rich Text Document Editor"
       // }
@@ -51,7 +51,7 @@ export const smartflowData: ProjectShowcaseData = {
         "Created comprehensive dashboards with real-time data visualization, workflow status " +
         "tracking, and performance metrics. Implemented data filtering, sorting, and export " +
         "functionality using React Query for efficient data management.",
-        // screenshot: {
+      // screenshot: {
       //   src: "/screenshots/smartflow-dashboard.png",
       //   alt: "Dashboard & Analytics"
       // }

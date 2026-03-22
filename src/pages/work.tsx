@@ -1,20 +1,27 @@
-import Head from "next/head";
-import { Header, Footer } from "@/components/layout";
+import { Footer, Header } from "@/components/layout";
 import { WorkGrid } from "@/components/sections/WorkGrid";
-import { scrollToSection as scrollToSectionUtil, cn } from "@/utils";
-import { useSectionObserver } from "@/hooks";
 import { workPageSections } from "@/data/navigation";
+import { workGridByCategory } from "@/data/workGrid";
+import { useSectionObserver } from "@/hooks";
+import { cn, scrollToSection as scrollToSectionUtil } from "@/utils";
+import Head from "next/head";
 
 export default function Work() {
   const [activeSection, setActiveSection] = useSectionObserver(
     workPageSections,
-    "professional",
+    workPageSections[0]?.id || "professional",
   );
 
   const scrollToSection = (sectionId: string) => {
     scrollToSectionUtil(sectionId);
     setActiveSection(sectionId);
   };
+
+  const availableSections = workPageSections.filter((section) => {
+    const category =
+      workGridByCategory[section.id as keyof typeof workGridByCategory];
+    return category && category.projects.length > 0;
+  });
 
   return (
     <>
@@ -32,7 +39,7 @@ export default function Work() {
           <div className="sticky top-[73px] z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors">
             <div className="container mx-auto px-4">
               <nav className="flex gap-2 overflow-x-auto py-4">
-                {workPageSections.map((section) => (
+                {availableSections.map((section) => (
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
@@ -52,9 +59,17 @@ export default function Work() {
 
           <div className="container mx-auto px-4 py-12">
             <div className="space-y-16">
-              <WorkGrid category="professional" />
-              <WorkGrid category="freelance" />
-              <WorkGrid category="demos" />
+              {availableSections.map((section) => (
+                <WorkGrid
+                  key={section.id}
+                  title={section.label}
+                  projects={
+                    workGridByCategory[
+                      section.id as keyof typeof workGridByCategory
+                    ]?.projects!
+                  }
+                />
+              ))}
             </div>
           </div>
         </main>

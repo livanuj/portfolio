@@ -1,8 +1,8 @@
-import React from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { IconMapPin, IconCalendar } from "@tabler/icons-react";
 import { experiences } from "@/data/timeline";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/utils";
+import { IconCalendar, IconMapPin } from "@tabler/icons-react";
+import React from "react";
 
 export const Timeline: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();

@@ -1,7 +1,7 @@
-import React from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { IconSchool, IconCalendar } from "@tabler/icons-react";
 import { education } from "@/data/education";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { IconCalendar, IconSchool } from "@tabler/icons-react";
+import React from "react";
 import { cn } from "../../utils";
 
 export const Education: React.FC = () => {
