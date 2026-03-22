@@ -1,61 +1,49 @@
 import React from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import {
   IconMail,
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import { site } from "@/data/site";
 
 export const Footer: React.FC = () => {
-  const { ref: contentRef, isVisible } = useScrollAnimation();
-
   return (
-    <footer
-      id="contact"
-      className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 text-white"
-    >
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute right-1/4 top-1/4 h-96 w-96 rounded-full bg-white blur-3xl" />
-      </div>
-      <div className="container relative mx-auto px-4" ref={contentRef}>
-        <div
-          className={`mx-auto max-w-4xl text-center transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <h2 className="mb-4 text-3xl font-bold">Get In Touch</h2>
-          <div className="mb-8 flex flex-wrap justify-center gap-4">
+    <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 py-8 transition-colors">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            © {new Date().getFullYear()} {site.fullName}
+          </p>
+
+          <div className="flex items-center gap-6">
             <a
-              href="mailto:livanuj@gmail.com"
-              className="group flex items-center gap-2 rounded-lg border-2 border-white/20 bg-white/10 px-6 py-3 font-semibold backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/20"
+              href={`mailto:${site.email}`}
+              className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+              aria-label="Email"
             >
-              <IconMail size={20} />
-              Email
+              <IconMail size={18} />
+              <span className="hidden sm:inline">Email</span>
             </a>
             <a
-              href="https://github.com/livanuj"
+              href={site.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 rounded-lg border-2 border-white/20 bg-white/10 px-6 py-3 font-semibold backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/20"
+              className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+              aria-label="GitHub"
             >
-              <IconBrandGithub size={20} />
-              GitHub
+              <IconBrandGithub size={18} />
+              <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/livanuj"
+              href={site.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 rounded-lg border-2 border-white/20 bg-white/10 px-6 py-3 font-semibold backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/20"
+              className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+              aria-label="LinkedIn"
             >
-              <IconBrandLinkedin size={20} />
-              LinkedIn
+              <IconBrandLinkedin size={18} />
+              <span className="hidden sm:inline">LinkedIn</span>
             </a>
-          </div>
-          <div className="border-t border-white/10 pt-8">
-            <p className="text-sm text-gray-400">
-              © {new Date().getFullYear()} Portfolio - livanuj. Built with
-              Next.js & Tailwind CSS.
-            </p>
           </div>
         </div>
       </div>
