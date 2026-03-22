@@ -250,7 +250,6 @@ portfolio/
 ├── next.config.mjs              # Next.js config
 ├── tailwind.config.js           # Tailwind CSS config
 ├── tsconfig.json                # TypeScript config
-├── netlify.toml                 # Netlify deployment config
 └── package.json
 ```
 
