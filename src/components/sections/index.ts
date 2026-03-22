@@ -1,5 +1,8 @@
-export { Hero } from "./Hero";
-export { About } from "./About";
-export { Skills } from "./Skills";
-export { Experience } from "./Experience";
+export { BioIntro } from "./BioIntro";
+export { TechSkills } from "./TechSkills";
+export { OtherSkills } from "./OtherSkills";
+export { Timeline } from "./Timeline";
 export { Education } from "./Education";
+export { ProjectCard } from "./ProjectCard";
+export { WorkGrid } from "./WorkGrid";
+export { ProjectShowcase } from "./ProjectShowcase";
