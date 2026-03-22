@@ -3,12 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light theme variables */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent-color: 187 60% 61%;
+  }
+
+  .dark {
+    /* Dark theme variables */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent-color: 187 60% 61%;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200;
   }
 }
 
@@ -17,7 +41,6 @@
     text-wrap: balance;
   }
   
-  /* Smoother animations like Apple */
   .transition-smooth {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -29,15 +52,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-500 rounded-full;
+  @apply bg-accent-500 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-600;
+  @apply bg-accent-600;
 }
 
 /* Performance optimizations */
