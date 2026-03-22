@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Header, Footer } from "@/components/layout";
 import { WorkGrid } from "@/components/sections/WorkGrid";
-import { scrollToSection as scrollToSectionUtil } from "@/utils";
+import { scrollToSection as scrollToSectionUtil, cn } from "@/utils";
 import { useSectionObserver } from "@/hooks";
 import { workPageSections } from "@/data/navigation";
 
@@ -36,11 +36,12 @@ export default function Work() {
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                    className={cn(
+                      "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
                       activeSection === section.id
                         ? "bg-accent-600 text-white"
-                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-                    }`}
+                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700",
+                    )}
                   >
                     {section.label}
                   </button>

@@ -10,6 +10,7 @@ import {
 } from "@tabler/icons-react";
 import { otherSkills } from "@/data/otherSkills";
 import type { OtherSkillIconId } from "@/types/portfolio";
+import { cn } from "@/utils";
 
 const otherSkillIcons = {
   code: IconCode,
@@ -26,17 +27,19 @@ export const OtherSkills: React.FC = () => {
     <section id="other-skills" className="py-16">
       <div className="max-w-5xl mx-auto" ref={ref}>
         <h2
-          className={`text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={cn(
+            "text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          )}
         >
           Specializations
         </h2>
 
         <div
-          className={`grid gap-6 md:grid-cols-2 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={cn(
+            "grid gap-6 md:grid-cols-2 transition-all duration-700 delay-100",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          )}
         >
           {otherSkills.map((skill) => {
             const IconComponent = otherSkillIcons[skill.icon];

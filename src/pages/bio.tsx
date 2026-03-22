@@ -5,7 +5,7 @@ import { TechSkills } from "@/components/sections/TechSkills";
 import { OtherSkills } from "@/components/sections/OtherSkills";
 import { Timeline } from "@/components/sections/Timeline";
 import { Education } from "@/components/sections/Education";
-import { scrollToSection as scrollToSectionUtil } from "@/utils";
+import { scrollToSection as scrollToSectionUtil, cn } from "@/utils";
 import { useSectionObserver } from "@/hooks";
 import { bioPageSections } from "@/data/navigation";
 
@@ -40,11 +40,12 @@ export default function Bio() {
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                    className={cn(
+                      "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
                       activeSection === section.id
                         ? "bg-accent-600 text-white"
-                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-                    }`}
+                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700",
+                    )}
                   >
                     {section.label}
                   </button>

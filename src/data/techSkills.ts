@@ -29,10 +29,10 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Nx Monorepo architecture",
       "Git & GitHub workflows",
-      "Docker containerization",
       "AWS & Azure cloud services",
       "CI/CD pipelines",
-      "Testing (Jest, Cypress, Zod validation)",
+      "Zod validation",
+      "Testing (Jest, Cypress, Unit tests)",
     ],
   },
   {

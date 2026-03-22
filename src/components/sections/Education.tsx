@@ -11,9 +11,10 @@ export const Education: React.FC = () => {
     <section id="education" className="py-16">
       <div className="max-w-4xl mx-auto" ref={ref}>
         <h2
-          className={`text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={cn(
+            "text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          )}
         >
           Education
         </h2>

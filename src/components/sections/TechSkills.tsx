@@ -1,6 +1,7 @@
 import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { skillCategories } from "@/data/techSkills";
+import { cn } from "@/utils";
 
 export const TechSkills: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -9,17 +10,19 @@ export const TechSkills: React.FC = () => {
     <section id="tech-skills" className="py-16">
       <div className="max-w-5xl mx-auto" ref={ref}>
         <h2
-          className={`text-3xl font-bold text-gray-900 dark:text-gray-100 mb-12 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={cn(
+            "text-3xl font-bold text-gray-900 dark:text-gray-100 mb-12 transition-all duration-700",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          )}
         >
           Tech Skills
         </h2>
 
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-10 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-2 gap-10 transition-all duration-700 delay-100",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          )}
         >
           {skillCategories.map((category) => (
             <div key={category.title}>

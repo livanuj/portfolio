@@ -2,6 +2,7 @@ import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { IconMapPin, IconCalendar } from "@tabler/icons-react";
 import { experiences } from "@/data/timeline";
+import { cn } from "@/utils";
 
 export const Timeline: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -10,17 +11,19 @@ export const Timeline: React.FC = () => {
     <section id="timeline" className="py-16">
       <div className="max-w-4xl mx-auto" ref={ref}>
         <h2
-          className={`text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={cn(
+            "text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          )}
         >
           Timeline
         </h2>
 
         <div
-          className={`relative transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={cn(
+            "relative transition-all duration-700 delay-100",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          )}
         >
           {/* Timeline line */}
           <div className="absolute left-[7px] top-0 bottom-0 w-0.5 bg-accent-500 dark:bg-accent-400" />
