@@ -3,9 +3,8 @@ import type { Project } from "@/types/portfolio";
 
 export type WorkGridCategory = "professional" | "freelance" | "demos";
 
-export const workGridByCategory: Record<
-  WorkGridCategory,
-  { title: string; projects: Project[] }
+export const workGridByCategory: Partial<
+  Record<WorkGridCategory, { title: string; projects: Project[] }>
 > = {
   professional: {
     title: "Professional Work",
@@ -15,8 +14,8 @@ export const workGridByCategory: Record<
     title: "Freelance Projects",
     projects: portfolioData.freelance,
   },
-  demos: {
-    title: "Interactive Demos",
-    projects: portfolioData.demos,
-  },
+  // demos: {
+  //   title: "Interactive Demos",
+  //   projects: portfolioData.demos,
+  // },
 };
