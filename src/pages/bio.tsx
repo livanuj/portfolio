@@ -1,13 +1,13 @@
-import Head from "next/head";
-import { Header, Footer } from "@/components/layout";
+import { Footer, Header } from "@/components/layout";
 import { BioIntro } from "@/components/sections/BioIntro";
-import { TechSkills } from "@/components/sections/TechSkills";
-import { OtherSkills } from "@/components/sections/OtherSkills";
-import { Timeline } from "@/components/sections/Timeline";
 import { Education } from "@/components/sections/Education";
-import { scrollToSection as scrollToSectionUtil, cn } from "@/utils";
-import { useSectionObserver } from "@/hooks";
+import { OtherSkills } from "@/components/sections/OtherSkills";
+import { TechSkills } from "@/components/sections/TechSkills";
+import { Timeline } from "@/components/sections/Timeline";
 import { bioPageSections } from "@/data/navigation";
+import { useSectionObserver } from "@/hooks";
+import { cn, scrollToSection as scrollToSectionUtil } from "@/utils";
+import Head from "next/head";
 
 export default function Bio() {
   const [activeSection, setActiveSection] = useSectionObserver(

@@ -1,16 +1,16 @@
-import React from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import {
-  IconCode,
-  IconBulb,
-  IconUsers,
-  IconRocket,
-  IconBrain,
-  type Icon,
-} from "@tabler/icons-react";
 import { otherSkills } from "@/data/otherSkills";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { OtherSkillIconId } from "@/types/portfolio";
 import { cn } from "@/utils";
+import {
+  IconBrain,
+  IconBulb,
+  IconCode,
+  IconRocket,
+  IconUsers,
+  type Icon,
+} from "@tabler/icons-react";
+import React from "react";
 
 const otherSkillIcons = {
   code: IconCode,

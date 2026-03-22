@@ -57,12 +57,7 @@ export type SkillCategory = {
   skills: string[];
 };
 
-export type OtherSkillIconId =
-  | "code"
-  | "bulb"
-  | "brain"
-  | "rocket"
-  | "users";
+export type OtherSkillIconId = "code" | "bulb" | "brain" | "rocket" | "users";
 
 export type OtherSkillItem = {
   icon: OtherSkillIconId;

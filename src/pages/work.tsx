@@ -1,9 +1,10 @@
-import Head from "next/head";
-import { Header, Footer } from "@/components/layout";
+import { Footer, Header } from "@/components/layout";
 import { WorkGrid } from "@/components/sections/WorkGrid";
-import { scrollToSection as scrollToSectionUtil, cn } from "@/utils";
-import { useSectionObserver } from "@/hooks";
 import { workPageSections } from "@/data/navigation";
+import { workGridByCategory } from "@/data/workGrid";
+import { useSectionObserver } from "@/hooks";
+import { cn, scrollToSection as scrollToSectionUtil } from "@/utils";
+import Head from "next/head";
 
 export default function Work() {
   const [activeSection, setActiveSection] = useSectionObserver(

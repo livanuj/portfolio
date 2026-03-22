@@ -1,5 +1,5 @@
-import type { Project } from "@/types/portfolio";
 import { portfolioData } from "@/data/projects";
+import type { Project } from "@/types/portfolio";
 
 export type WorkGridCategory = "professional" | "freelance" | "demos";
 

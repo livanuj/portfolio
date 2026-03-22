@@ -20,10 +20,7 @@ export default function Home() {
           <div className="container mx-auto px-4 py-16">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-                <AnimatedDiv
-                  delay="0.1s"
-                  className="flex-shrink-0"
-                >
+                <AnimatedDiv delay="0.1s" className="flex-shrink-0">
                   <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center shadow-xl border-4 border-white dark:border-gray-800">
                       <Image

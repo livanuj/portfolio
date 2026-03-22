@@ -1,10 +1,10 @@
-import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import { Logo } from "@/components/ui";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { cn } from "@/utils";
 import { site } from "@/data/site";
+import { cn } from "@/utils";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
 
 export const Header: React.FC = () => {
   const router = useRouter();

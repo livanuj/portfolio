@@ -85,6 +85,7 @@ The portfolio consists of three main pages:
 All content is centralized in the `/src/data` folder for easy updates:
 
 **Site Information** - `src/data/site.ts`
+
 ```typescript
 export const site = {
   fullName: "Your Name",
@@ -94,10 +95,11 @@ export const site = {
   linkedinUrl: "https://linkedin.com/in/yourusername",
   profileImage: "/images/profile.jpg",
   // ...
-}
+};
 ```
 
 **Bio Intro** - `src/data/bioIntro.ts`
+
 ```typescript
 export const bioIntroParagraphs: string[] = [
   "Your introduction paragraph...",
@@ -106,15 +108,19 @@ export const bioIntroParagraphs: string[] = [
 ```
 
 **Tech Skills** - `src/data/techSkills.ts`
+
 - Update your technical skills by category
 
 **Timeline** - `src/data/timeline.ts`
+
 - Add your work experience and education timeline
 
 **Projects** - `src/data/projects.ts`
+
 - Showcase your professional and freelance work
 
 **Education** - `src/data/education.ts`
+
 - Update your educational background
 
 ### Theme Colors
@@ -258,6 +264,7 @@ portfolio/
 ### Data-Driven Content
 
 All portfolio content lives in `/src/data`, making it easy to update without touching components:
+
 - Update your bio, skills, timeline, and projects in TypeScript files
 - Type-safe data structures prevent errors
 - Single source of truth for all content
@@ -268,14 +275,14 @@ Components use barrel exports (`index.ts`) for cleaner imports:
 
 ```typescript
 // ✅ Clean imports via barrel exports
-import { Header, Footer } from '@/components/layout';
-import { BioIntro, TechSkills, Timeline } from '@/components/sections';
-import { Logo, ThemeToggle } from '@/components/ui';
+import { Header, Footer } from "@/components/layout";
+import { BioIntro, TechSkills, Timeline } from "@/components/sections";
+import { Logo, ThemeToggle } from "@/components/ui";
 
 // ❌ Without barrel exports (verbose)
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import BioIntro from '@/components/sections/BioIntro';
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import BioIntro from "@/components/sections/BioIntro";
 ```
 
 ### Utility-First Styling
@@ -331,6 +338,7 @@ npm run lint
 ## 🎓 Learning Resources
 
 Built with:
+
 - [Next.js Documentation](https://nextjs.org/docs)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Tailwind CSS](https://tailwindcss.com/docs)
@@ -339,6 +347,7 @@ Built with:
 ## 🤝 Contributing
 
 This is a personal portfolio, but feel free to:
+
 - Fork it for your own portfolio
 - Submit issues for bugs
 - Suggest improvements

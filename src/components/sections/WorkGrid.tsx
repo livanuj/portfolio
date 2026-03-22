@@ -1,19 +1,21 @@
-import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { ProjectCard } from "./ProjectCard";
-import { workGridByCategory, type WorkGridCategory } from "@/data/workGrid";
 import { cn } from "@/utils";
+import React from "react";
+import { Project } from "../../types/portfolio";
+import { ProjectCard } from "./ProjectCard";
 
 type WorkGridProps = {
-  category: WorkGridCategory;
+  title: string;
+  projects: Project[];
 };
 
-export const WorkGrid: React.FC<WorkGridProps> = ({ category }) => {
+export const WorkGrid: React.FC<WorkGridProps> = (props) => {
+  const { title, projects } = props;
+
   const { ref, isVisible } = useScrollAnimation();
-  const { title, projects } = workGridByCategory[category];
 
   return (
-    <section id={category} className="py-16">
+    <section id={title} className="py-16">
       <div className="max-w-5xl mx-auto" ref={ref}>
         <h2
           className={cn(
