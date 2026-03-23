@@ -11,13 +11,8 @@ type Section = {
  * @param defaultSection - Initial active section (default: first section)
  * @returns [activeSection, setActiveSection] - The currently active section and setter function
  */
-export const useSectionObserver = (
-  sections: Section[],
-  defaultSection?: string,
-) => {
-  const [activeSection, setActiveSection] = useState(
-    defaultSection || sections[0]?.id || "",
-  );
+export const useSectionObserver = (sections: Section[], defaultSection?: string) => {
+  const [activeSection, setActiveSection] = useState(defaultSection || sections[0]?.id || "");
 
   useEffect(() => {
     const observerOptions = {
@@ -34,10 +29,7 @@ export const useSectionObserver = (
       });
     };
 
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions,
-    );
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     sections.forEach((section) => {
       const element = document.getElementById(section.id);

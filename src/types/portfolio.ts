@@ -12,19 +12,20 @@ export type Project = {
 export type ProjectFeature = {
   title: string;
   description: string;
-  screenshot?: {
+  screenshots?: Array<{
     src: string;
     alt: string;
-  };
+  }>;
 };
 
 export type ProjectShowcaseData = {
   title: string;
-  client: string;
+  company: string;
   role: string;
   period: string;
   type: string;
   overview: string;
+  link?: string;
   features: ProjectFeature[];
   technologies: string[];
   achievements: string[];

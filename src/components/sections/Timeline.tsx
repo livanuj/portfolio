@@ -9,11 +9,11 @@ export const Timeline: React.FC = () => {
 
   return (
     <section id="timeline" className="py-16">
-      <div className="max-w-4xl mx-auto" ref={ref}>
+      <div className="mx-auto max-w-4xl" ref={ref}>
         <h2
           className={cn(
-            "text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "mb-8 text-3xl font-bold text-gray-900 transition-all duration-700 dark:text-gray-100",
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
         >
           Timeline
@@ -21,25 +21,25 @@ export const Timeline: React.FC = () => {
 
         <div
           className={cn(
-            "relative transition-all duration-700 delay-100",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "relative transition-all delay-100 duration-700",
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
         >
           {/* Timeline line */}
-          <div className="absolute left-[7px] top-0 bottom-0 w-0.5 bg-accent-500 dark:bg-accent-400" />
+          <div className="absolute bottom-0 left-[7px] top-0 w-0.5 bg-accent-500 dark:bg-accent-400" />
 
           <div className="space-y-10">
             {experiences.map((exp, expIndex) => (
               <div key={expIndex} className="relative pl-10">
                 {/* Timeline dot */}
-                <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-accent-500 dark:bg-accent-400 border-4 border-white dark:border-gray-900" />
+                <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full border-4 border-white bg-accent-500 dark:border-gray-900 dark:bg-accent-400" />
 
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
                       {exp.company}
                     </h3>
-                    <div className="flex flex-wrap gap-4 mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="mt-1 flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
                       <span className="flex items-center gap-1">
                         <IconMapPin size={16} />
                         {exp.location}
@@ -54,7 +54,7 @@ export const Timeline: React.FC = () => {
                   {exp.roles.map((role, roleIndex) => (
                     <div
                       key={roleIndex}
-                      className="border-l-2 border-gray-200 dark:border-gray-800 pl-4"
+                      className="border-l-2 border-gray-200 pl-4 dark:border-gray-800"
                     >
                       <h4 className="font-semibold text-gray-900 dark:text-gray-100">
                         {role.title}
@@ -63,11 +63,9 @@ export const Timeline: React.FC = () => {
                         {role.highlights.map((highlight, hIndex) => (
                           <li
                             key={hIndex}
-                            className="text-sm text-gray-600 dark:text-gray-400 flex gap-2"
+                            className="flex gap-2 text-sm text-gray-600 dark:text-gray-400"
                           >
-                            <span className="text-accent-500 dark:text-accent-400 mt-1">
-                              ▹
-                            </span>
+                            <span className="mt-1 text-accent-500 dark:text-accent-400">▹</span>
                             <span>{highlight}</span>
                           </li>
                         ))}

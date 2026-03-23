@@ -18,8 +18,7 @@ export default function Work() {
   };
 
   const availableSections = workPageSections.filter((section) => {
-    const category =
-      workGridByCategory[section.id as keyof typeof workGridByCategory];
+    const category = workGridByCategory[section.id as keyof typeof workGridByCategory];
     return category && category.projects.length > 0;
   });
 
@@ -33,10 +32,10 @@ export default function Work() {
           content="Professional work, freelance projects, and interactive demos by Anuj Shrestha."
         />
       </Head>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
+      <div className="min-h-screen bg-white transition-colors dark:bg-gray-900">
         <Header />
         <main>
-          <div className="sticky top-[73px] z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors">
+          <div className="sticky top-[73px] z-40 border-b border-gray-200 bg-white transition-colors dark:border-gray-800 dark:bg-gray-900">
             <div className="container mx-auto px-4">
               <nav className="flex gap-2 overflow-x-auto py-4">
                 {availableSections.map((section) => (
@@ -44,10 +43,10 @@ export default function Work() {
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
                     className={cn(
-                      "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
+                      "whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors",
                       activeSection === section.id
                         ? "bg-accent-600 text-white"
-                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700",
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700",
                     )}
                   >
                     {section.label}
@@ -64,9 +63,7 @@ export default function Work() {
                   key={section.id}
                   title={section.label}
                   projects={
-                    workGridByCategory[
-                      section.id as keyof typeof workGridByCategory
-                    ]?.projects!
+                    workGridByCategory[section.id as keyof typeof workGridByCategory]?.projects!
                   }
                 />
               ))}

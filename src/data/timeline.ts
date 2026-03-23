@@ -44,8 +44,7 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    company:
-      "LeaveLogic | Whitehat Engineering(US) | Codyssey Web Nepal Pvt. Ltd.(Nepal) ",
+    company: "LeaveLogic | Whitehat Engineering(US) | Codyssey Web Nepal Pvt. Ltd.(Nepal) ",
     location: "Kathmandu, Nepal",
     period: "Apr 2017 – Mar 2023 (6 years)",
     roles: [
@@ -105,9 +104,7 @@ export const experiences: ExperienceItem[] = [
       {
         title: "Software Engineer",
         period: "Nov 2014 – Mar 2017",
-        highlights: [
-          "Developed project management system using Ruby on Rails (MVC)",
-        ],
+        highlights: ["Developed project management system using Ruby on Rails (MVC)"],
       },
     ],
   },
