@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { Header, Footer } from "@/components/layout";
+import { Footer, Header } from "@/components/layout";
 import { ProjectShowcase } from "@/components/sections/ProjectShowcase";
 import { smartflowData } from "@/data/projectShowcases/smartflow";
+import Head from "next/head";
 
 export default function SmartFlow() {
   return (
@@ -14,7 +14,7 @@ export default function SmartFlow() {
           content="Enterprise workflow automation and digital onboarding platform built with React, TypeScript, and Next.js"
         />
       </Head>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
+      <div className="min-h-screen bg-white transition-colors dark:bg-gray-900">
         <Header />
         <main className="container mx-auto px-4 py-12">
           <ProjectShowcase data={smartflowData} />

@@ -20,45 +20,64 @@ export const smartflowData: ProjectShowcaseData = {
       title: "Dynamic Form Builder",
       description:
         "Developed a flexible form builder supporting 15+ field types including text, number, " +
-        "date pickers, dropdowns, file uploads, and signature fields. Implemented real-time " +
-        "validation, conditional logic, and field dependencies using Zod for schema validation.",
-      // screenshot: {
-      //   src: "/screenshots/smartflow-form-builder.png",
-      //   alt: "Dynamic Form Builder Interface"
-      // }
-    },
-    {
-      title: "Multi-Step Workflow Management",
-      description:
-        "Built intuitive multi-step workflow interfaces with progress tracking, step validation, " +
-        "and state management using Zustand. Implemented draft saving, auto-save functionality, " +
-        "and seamless navigation between workflow steps.",
-      // screenshot: {
-      //   src: "/screenshots/smartflow-workflow.png",
-      //   alt: "Workflow Step Navigation"
-      // }
+        "date pickers, dropdowns, file uploads, and signature fields. Implemented dynamic clarification " +
+        "system where selecting answers triggers conditional follow-up questions automatically. " +
+        "Built real-time validation using Zod schema validation, with the same interactive form experience " +
+        "for both admin preview and signee completion flows. Added field dependencies and conditional " +
+        "logic ensuring forms adapt intelligently to user responses.",
+      screenshots: [
+        {
+          src: "/screenshots/smartflow/sm-flow-editor.png",
+          alt: "Form Builder",
+        },
+        {
+          src: "/screenshots/smartflow/sm-fields-with-clarification.png",
+          alt: "Dynamic Form Builder with Clarification System",
+        },
+        {
+          src: "/screenshots/smartflow/sm-clarification-demo.gif",
+          alt: "Clarification System Demo Animation",
+        },
+      ],
     },
     {
       title: "Rich Text Document Editor",
       description:
         "Integrated ProseMirror and TipTap for powerful document editing capabilities. " +
-        "Implemented custom extensions for templates, variables, and dynamic content insertion. " +
-        "Added collaborative editing features and document versioning.",
-      // screenshot: {
-      //   src: "/screenshots/smartflow-rich-text-editor.png",
-      //   alt: "Rich Text Document Editor"
-      // }
+        "Built reference system allowing admins to embed form's fields directly into documents and email templates - " +
+        "when signees complete the form, their answers automatically populate into the referenced fields. " +
+        "Implemented conditional block rendering where entire paragraphs show/hide based on expression-based rules " +
+        "evaluated against form's responses, enabling dynamic contract generation that adapts to user input. " +
+        "Allows non-technical users to create complex documents with dynamic content.",
+      screenshots: [
+        {
+          src: "/screenshots/smartflow/sm-doc-editor.png",
+          alt: "Rich Text Document Editor",
+        },
+        {
+          src: "/screenshots/smartflow/sm-document-editor.gif",
+          alt: "Rich Text Document Editor Demo",
+        },
+      ],
     },
     {
-      title: "Dashboard & Analytics",
+      title: "Advanced Conditional Logic Engine",
       description:
-        "Created comprehensive dashboards with real-time data visualization, workflow status " +
-        "tracking, and performance metrics. Implemented data filtering, sorting, and export " +
-        "functionality using React Query for efficient data management.",
-      // screenshot: {
-      //   src: "/screenshots/smartflow-dashboard.png",
-      //   alt: "Dashboard & Analytics"
-      // }
+        "Engineered expression-based conditional logic system enabling dynamic show/hide form rules " +
+        "based on previous answers. Implemented conditional document rendering where contract text " +
+        "automatically changes based on form's responses. Built visual rule builder with " +
+        "expression evaluation, supporting complex nested conditions and multi-field dependencies " +
+        "for creating intelligent, adaptive forms.",
+      screenshots: [
+        {
+          src: "/screenshots/smartflow/sm-conditional-logic.png",
+          alt: "Conditional Logic Rule in Form Builder",
+        },
+        {
+          src: "/screenshots/smartflow/sm-conditional-logic-editor.png",
+          alt: "Conditional Logic Rule Editor",
+        },
+      ],
     },
   ],
   technologies: [
@@ -71,14 +90,12 @@ export const smartflowData: ProjectShowcaseData = {
     "TipTap",
     "Tailwind CSS",
     "Zod",
-    "GraphQL",
   ],
   achievements: [
-    "Built scalable component library used across multiple products",
-    "Reduced form completion time by 40% with improved UX design",
-    "Implemented real-time collaboration features for document editing",
-    "Maintained 95%+ code coverage with comprehensive testing suite",
-    "Led migration from legacy codebase to modern React architecture",
+    "Replaced code-based SmartForm system with no-code visual builder, eliminating manual field development and enabling non-technical users to create forms independently",
+    "Built document editor with question reference system, eliminating need for developers to manually update PDF templates and embed field references",
+    "Designed template marketplace with 20+ pre-built flows (NDAs, employment contracts, AML forms) reducing time to create workflow processes by 80%",
+    "Reduced form abandonment by 40% through progressive disclosure signing experience and mobile-responsive UI",
   ],
   backLink: "/work",
 };

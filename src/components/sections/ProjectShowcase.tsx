@@ -10,20 +10,18 @@ type ProjectShowcaseProps = {
 
 export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
   return (
-    <div className="max-w-4xl mx-auto">
-      {/* Back Link */}
+    <div className="mx-auto max-w-4xl">
       <Link
         href={data.backLink || "/work"}
-        className="inline-flex items-center gap-2 text-accent-600 dark:text-accent-400 hover:underline mb-8"
+        className="mb-8 inline-flex items-center gap-2 text-accent-600 hover:underline dark:text-accent-400"
       >
         <IconArrowLeft size={20} />
         <span>All Projects</span>
       </Link>
 
-      {/* Project Header */}
       <div className="mb-12">
-        <div className="flex items-start justify-between gap-4 mb-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">
+        <div className="mb-6 flex items-start justify-between gap-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 md:text-5xl">
             {data.title}
           </h1>
           {data.link && (
@@ -31,7 +29,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
               href={data.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-accent-600 hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 text-white rounded-lg font-medium transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-accent-600 px-4 py-2 font-medium text-white transition-colors hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600"
             >
               <span>Visit Product</span>
               <IconExternalLink size={18} />
@@ -39,91 +37,68 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
           )}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4">
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-              Company
-            </p>
-            <p className="font-semibold text-gray-900 dark:text-gray-100">
-              {data.company}
-            </p>
+            <p className="mb-1 text-sm text-gray-600 dark:text-gray-400">Company</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">{data.company}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-              Role
-            </p>
-            <p className="font-semibold text-gray-900 dark:text-gray-100">
-              {data.role}
-            </p>
+            <p className="mb-1 text-sm text-gray-600 dark:text-gray-400">Role</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">{data.role}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-              Period
-            </p>
-            <p className="font-semibold text-gray-900 dark:text-gray-100">
-              {data.period}
-            </p>
+            <p className="mb-1 text-sm text-gray-600 dark:text-gray-400">Period</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">{data.period}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-              Type
-            </p>
-            <p className="font-semibold text-gray-900 dark:text-gray-100">
-              {data.type}
-            </p>
+            <p className="mb-1 text-sm text-gray-600 dark:text-gray-400">Type</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">{data.type}</p>
           </div>
         </div>
       </div>
 
-      {/* Overview Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          Overview
-        </h2>
+        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">Overview</h2>
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            {data.overview}
-          </p>
+          <p className="leading-relaxed text-gray-700 dark:text-gray-300">{data.overview}</p>
         </div>
       </section>
 
-      {/* Key Features Section */}
       {data.features.length > 0 && (
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">
+          <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-100">
             Key Features & Contributions
           </h2>
 
           {data.features.map((feature, index) => (
             <div key={index} className="mb-12">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-gray-100">
                 {feature.title}
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
                 {feature.description}
               </p>
 
-              {/* Screenshot */}
-              {feature.screenshot ? (
-                <div className="rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-                  <Image
-                    src={feature.screenshot.src}
-                    alt={feature.screenshot.alt}
-                    width={1200}
-                    height={675}
-                    className="w-full h-auto"
-                  />
-                </div>
-              ) : (
-                <div className="bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 aspect-video flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-gray-500 dark:text-gray-400 mb-2">
-                      Screenshot placeholder
-                    </p>
-                    <p className="text-sm text-gray-400 dark:text-gray-500">
-                      {feature.title}
-                    </p>
-                  </div>
+              {feature.screenshots && feature.screenshots.length > 0 && (
+                <div className="space-y-4">
+                  {feature.screenshots.map((screenshot, screenshotIndex) => {
+                    const isGif = screenshot.src.toLowerCase().endsWith(".gif");
+                    return (
+                      <div
+                        key={screenshotIndex}
+                        className="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700"
+                      >
+                        <Image
+                          src={screenshot.src}
+                          alt={screenshot.alt}
+                          width={1200}
+                          height={675}
+                          className="h-auto w-full"
+                          unoptimized={isGif}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -131,17 +106,16 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
         </section>
       )}
 
-      {/* Technologies Section */}
       {data.technologies.length > 0 && (
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+          <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
             Technologies Used
           </h2>
           <div className="flex flex-wrap gap-2">
             {data.technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-accent-50 dark:bg-accent-900/20 text-accent-700 dark:text-accent-300 rounded-lg font-medium border border-accent-200 dark:border-accent-800"
+                className="rounded-lg border border-accent-200 bg-accent-50 px-4 py-2 font-medium text-accent-700 dark:border-accent-800 dark:bg-accent-900/20 dark:text-accent-300"
               >
                 {tech}
               </span>
@@ -150,19 +124,15 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
         </section>
       )}
 
-      {/* Key Achievements Section */}
       {data.achievements.length > 0 && (
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+          <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
             Key Achievements
           </h2>
           <ul className="space-y-3">
             {data.achievements.map((achievement, index) => (
-              <li
-                key={index}
-                className="flex items-start text-gray-700 dark:text-gray-300"
-              >
-                <span className="text-accent-600 dark:text-accent-400 mr-3 mt-0.5 select-none flex-shrink-0">
+              <li key={index} className="flex items-start text-gray-700 dark:text-gray-300">
+                <span className="mr-3 mt-0.5 flex-shrink-0 select-none text-accent-600 dark:text-accent-400">
                   ▹
                 </span>
                 <span>{achievement}</span>

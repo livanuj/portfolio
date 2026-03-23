@@ -12,10 +12,10 @@ export type Project = {
 export type ProjectFeature = {
   title: string;
   description: string;
-  screenshot?: {
+  screenshots?: Array<{
     src: string;
     alt: string;
-  };
+  }>;
 };
 
 export type ProjectShowcaseData = {
