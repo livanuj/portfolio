@@ -25,11 +25,11 @@ export const OtherSkills: React.FC = () => {
 
   return (
     <section id="other-skills" className="py-16">
-      <div className="max-w-5xl mx-auto" ref={ref}>
+      <div className="mx-auto max-w-5xl" ref={ref}>
         <h2
           className={cn(
-            "text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "mb-8 text-3xl font-bold text-gray-900 transition-all duration-700 dark:text-gray-100",
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
         >
           Specializations
@@ -37,8 +37,8 @@ export const OtherSkills: React.FC = () => {
 
         <div
           className={cn(
-            "grid gap-6 md:grid-cols-2 transition-all duration-700 delay-100",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "grid gap-6 transition-all delay-100 duration-700 md:grid-cols-2",
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
         >
           {otherSkills.map((skill) => {
@@ -46,17 +46,17 @@ export const OtherSkills: React.FC = () => {
             return (
               <div
                 key={skill.title}
-                className="p-6 border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-900 hover:border-accent-500 dark:hover:border-accent-400 transition-all"
+                className="rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-accent-500 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-accent-400"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-2 rounded-lg bg-accent-100 dark:bg-accent-900/20 text-accent-600 dark:text-accent-400">
+                  <div className="flex-shrink-0 rounded-lg bg-accent-100 p-2 text-accent-600 dark:bg-accent-900/20 dark:text-accent-400">
                     <IconComponent size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
                       {skill.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                       {skill.description}
                     </p>
                   </div>

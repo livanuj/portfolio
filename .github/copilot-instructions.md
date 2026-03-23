@@ -47,6 +47,7 @@ For **all other terminal commands** (build, install, deploy, etc.), always ask p
 #### ESLint Rules
 
 Key enabled rules:
+
 - Prettier integration for formatting
 - React hooks rules enforced
 - TypeScript recommended rules
@@ -54,6 +55,7 @@ Key enabled rules:
 - Import organization (via prettier-plugin-organize-imports)
 
 Key disabled rules (project preference):
+
 - `no-console` - Console logs are allowed
 - `@typescript-eslint/no-explicit-any` - Any is allowed when necessary
 - `import/prefer-default-export` - Named exports preferred
@@ -63,7 +65,7 @@ Key disabled rules (project preference):
 
 - **Print width**: 100 characters
 - **Trailing commas**: Always
-- **Plugins**: 
+- **Plugins**:
   - `prettier-plugin-organize-imports` (auto-organizes imports)
   - `prettier-plugin-tailwindcss` (orders Tailwind classes)
 

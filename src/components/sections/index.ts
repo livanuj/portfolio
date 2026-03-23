@@ -1,8 +1,8 @@
 export { BioIntro } from "./BioIntro";
-export { TechSkills } from "./TechSkills";
-export { OtherSkills } from "./OtherSkills";
-export { Timeline } from "./Timeline";
 export { Education } from "./Education";
+export { OtherSkills } from "./OtherSkills";
 export { ProjectCard } from "./ProjectCard";
-export { WorkGrid } from "./WorkGrid";
 export { ProjectShowcase } from "./ProjectShowcase";
+export { TechSkills } from "./TechSkills";
+export { Timeline } from "./Timeline";
+export { WorkGrid } from "./WorkGrid";

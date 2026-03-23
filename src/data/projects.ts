@@ -10,14 +10,7 @@ const professionalProjects: Project[] = [
     description:
       "Built internal workflow tools and customer-facing applications for digital onboarding and document automation. Developed scalable UI components with React, TypeScript, and Next.js supporting complex multi-step workflows, dynamic forms (15+ field types), and rich-text editing with ProseMirror/TipTap.",
     link: "/work/smartflow",
-    tags: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "React Query",
-      "Zustand",
-      "ProseMirror",
-    ],
+    tags: ["React", "TypeScript", "Next.js", "React Query", "Zustand", "ProseMirror"],
   },
   {
     title: "LeaveLogic",

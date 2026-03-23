@@ -6,8 +6,7 @@ export const education: EducationItem[] = [
     institution: "Háskóli Íslands",
     location: "Reykjavík, Iceland",
     period: "Aug 2022 – Present",
-    status:
-      "Courses completed, thesis ongoing: User experience analysis using AI",
+    status: "Courses completed, thesis ongoing: User experience analysis using AI",
   },
   {
     degree: "BE in Computer Engineering",

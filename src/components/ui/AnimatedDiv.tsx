@@ -15,7 +15,7 @@ export const AnimatedDiv: React.FC<AnimatedDivProps> = ({
 }) => {
   return (
     <div
-      className={cn("opacity-0 animate-fade-in", className)}
+      className={cn("animate-fade-in opacity-0", className)}
       style={{
         animationDelay: delay,
         animationFillMode: "forwards",
