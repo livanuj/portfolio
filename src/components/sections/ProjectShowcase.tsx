@@ -75,9 +75,28 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
               <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-gray-100">
                 {feature.title}
               </h3>
-              <p className="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
-                {feature.description}
-              </p>
+
+              {feature.description && (
+                <p className="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
+                  {feature.description}
+                </p>
+              )}
+
+              {feature.bullets && feature.bullets.length > 0 && (
+                <ul className="mb-6 space-y-2">
+                  {feature.bullets.map((bullet, bulletIndex) => (
+                    <li
+                      key={bulletIndex}
+                      className="flex items-start text-gray-700 dark:text-gray-300"
+                    >
+                      <span className="mr-3 mt-1 flex-shrink-0 select-none text-accent-600 dark:text-accent-400">
+                        •
+                      </span>
+                      <span className="leading-relaxed">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {feature.screenshots && feature.screenshots.length > 0 && (
                 <div className="space-y-4">
