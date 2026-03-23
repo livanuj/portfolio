@@ -2,7 +2,7 @@ import type { ProjectShowcaseData } from "@/types/portfolio";
 
 export const smartflowData: ProjectShowcaseData = {
   title: "SmartFlows Platform",
-  client: "Taktikal Ehf.",
+  company: "Taktikal Ehf.",
   role: "Frontend Developer",
   period: "2023 - 2026",
   type: "Enterprise SaaS",
@@ -10,7 +10,11 @@ export const smartflowData: ProjectShowcaseData = {
     "SmartFlows is an enterprise-grade workflow automation platform that streamlines " +
     "digital onboarding and document automation processes. I built internal workflow " +
     "tools and customer-facing applications with complex multi-step workflows, dynamic " +
-    "forms supporting 15+ field types, and rich-text editing capabilities.",
+    "forms supporting 15+ field types, and rich-text editing capabilities." +
+    "The platform is built with React, TypeScript, and Next.js, utilizing React Query for " +
+    "data management and Zustand for state management. I integrated ProseMirror and TipTap " +
+    "for powerful document editing features, including custom extensions for templates and variables.",
+  link: "https://www.taktikal.com/smartflows",
   features: [
     {
       title: "Dynamic Form Builder",

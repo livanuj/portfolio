@@ -1,8 +1,8 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { IconArrowLeft } from "@tabler/icons-react";
 import type { ProjectShowcaseData } from "@/types/portfolio";
+import { IconArrowLeft, IconExternalLink } from "@tabler/icons-react";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 type ProjectShowcaseProps = {
   data: ProjectShowcaseData;
@@ -22,17 +22,30 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
 
       {/* Project Header */}
       <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-          {data.title}
-        </h1>
+        <div className="flex items-start justify-between gap-4 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">
+            {data.title}
+          </h1>
+          {data.link && (
+            <a
+              href={data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-accent-600 hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 text-white rounded-lg font-medium transition-colors whitespace-nowrap"
+            >
+              <span>Visit Product</span>
+              <IconExternalLink size={18} />
+            </a>
+          )}
+        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-              Client
+              Company
             </p>
             <p className="font-semibold text-gray-900 dark:text-gray-100">
-              {data.client}
+              {data.company}
             </p>
           </div>
           <div>
