@@ -1,7 +1,21 @@
 import { Layout } from "@/components/layout";
-import { IconCheck } from "@tabler/icons-react";
+import { BulletList, Card } from "@/components/ui";
 
 export default function WorkflowBuilder() {
+  const technicalHighlights = [
+    "Complex state synchronization across workflow nodes",
+    "Real-time validation and error handling",
+    "Undo/redo functionality with history management",
+    "Optimistic UI updates for smooth user experience",
+  ];
+
+  const architectureDecisions = [
+    "Component-based architecture for reusability",
+    "Type-safe workflow definitions with TypeScript",
+    "Separation of concerns (UI, state, business logic)",
+    "Extensible design for adding new workflow step types",
+  ];
+
   return (
     <Layout
       title="Workflow Builder Demo | Anuj Shrestha"
@@ -57,77 +71,19 @@ export default function WorkflowBuilder() {
       </div>
 
       <div className="mt-12 grid gap-8 md:grid-cols-2">
-        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow transition-colors dark:border-gray-700 dark:bg-gray-800">
+        <Card>
           <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-gray-100">
             Technical Highlights
           </h3>
-          <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Complex state synchronization across workflow nodes</span>
-            </li>
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Real-time validation and error handling</span>
-            </li>
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Undo/redo functionality with history management</span>
-            </li>
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Optimistic UI updates for smooth user experience</span>
-            </li>
-          </ul>
-        </div>
+          <BulletList items={technicalHighlights} icon="check" />
+        </Card>
 
-        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow transition-colors dark:border-gray-700 dark:bg-gray-800">
+        <Card>
           <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-gray-100">
             Architecture Decisions
           </h3>
-          <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Component-based architecture for reusability</span>
-            </li>
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Type-safe workflow definitions with TypeScript</span>
-            </li>
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Separation of concerns (UI, state, business logic)</span>
-            </li>
-            <li className="flex items-start">
-              <IconCheck
-                size={20}
-                className="mr-3 mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-              />
-              <span>Extensible design for adding new workflow step types</span>
-            </li>
-          </ul>
-        </div>
+          <BulletList items={architectureDecisions} icon="check" />
+        </Card>
       </div>
     </Layout>
   );

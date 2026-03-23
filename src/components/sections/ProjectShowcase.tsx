@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type ProjectShowcaseProps = {
+type Props = {
   data: ProjectShowcaseData;
 };
 
-export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
+export const ProjectShowcase: React.FC<Props> = ({ data }) => {
   return (
     <div className="mx-auto max-w-4xl">
       <Link
@@ -59,7 +59,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ data }) => {
 
       <section className="mb-16">
         <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">Overview</h2>
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="max-w-none">
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">{data.overview}</p>
         </div>
       </section>

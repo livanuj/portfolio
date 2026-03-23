@@ -3,13 +3,13 @@ import React from "react";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-type LayoutProps = {
+type Props = {
   children: React.ReactNode;
   title: string;
   description?: string;
 };
 
-export const Layout: React.FC<LayoutProps> = ({ children, title, description }) => {
+export const Layout: React.FC<Props> = ({ children, title, description }) => {
   return (
     <>
       <Head>

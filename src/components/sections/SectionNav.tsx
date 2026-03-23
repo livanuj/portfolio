@@ -6,17 +6,13 @@ type Section = {
   label: string;
 };
 
-type SectionNavProps = {
+type Props = {
   sections: Section[];
   activeSection: string;
   onSectionClick: (sectionId: string) => void;
 };
 
-export const SectionNav: React.FC<SectionNavProps> = ({
-  sections,
-  activeSection,
-  onSectionClick,
-}) => {
+export const SectionNav: React.FC<Props> = ({ sections, activeSection, onSectionClick }) => {
   return (
     <div className="sticky top-[73px] z-40 hidden border-b border-gray-200 bg-white transition-colors dark:border-gray-800 dark:bg-gray-900 md:block">
       <div className="container mx-auto px-4">
