@@ -15,6 +15,18 @@ A modern, professional portfolio website showcasing full-stack development exper
 - 🔧 Type-safe data structures with TypeScript
 - ♿ Accessible with proper ARIA labels
 
+## 🤖 AI-Assisted Development
+
+This project leverages **GitHub Copilot** with custom skills for enhanced productivity:
+
+- **GitHub Copilot Skills** - Domain-specific patterns in `.github/skills/`
+  - `component-creation` - React component patterns & shared component library
+  - `data-content` - Data-driven architecture & content management
+- **Pre-commit Hooks** - Automated type checking, linting, and formatting via Husky
+- **AI-Native Codebase** - Optimized for AI-assisted development and maintenance
+
+See [Using GitHub Copilot Skills](#-github-copilot-skills) for details.
+
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 (Pages Router)
@@ -58,7 +70,15 @@ npm start
 
 # Run ESLint
 npm run lint
+
+# Type checking
+npm run typecheck
+
+# Format code with Prettier
+npm run format
 ```
+
+**Pre-commit Hooks**: The project uses Husky to automatically run type checking and linting before commits.
 
 ### Build for Production
 
@@ -127,7 +147,7 @@ export const bioIntroParagraphs: string[] = [
 
 Customize the accent color in `tailwind.config.js`:
 
-```javascript
+````javascript
 colors: {
   accent: {
     50: '#ecfeff',
@@ -136,7 +156,19 @@ colors: {
     // ...
   },
 }
-```
+```Shared Component Library
+
+The project includes reusable components to reduce code duplication:
+
+- **Section** - Scroll-animated section wrapper with heading (`@/components/ui/Section`)
+- **Card** - Standard card with dark mode & hover states (`@/components/ui/Card`)
+- **BulletList** - Icon bullet lists with check/arrow variants (`@/components/ui/BulletList`)
+- **IconBadge** - Accent-colored icon wrapper (`@/components/ui/IconBadge`)
+- **SectionPage** - Page layout with section navigation (`@/components/layout/SectionPage`)
+
+Use these instead of creating custom solutions.
+
+###
 
 ### Dark Mode
 
@@ -159,7 +191,7 @@ Dark mode is automatically handled by `next-themes`. The theme toggle is in the 
   link: "/work/your-project", // Optional
   tags: ["React", "TypeScript"],
 }
-```
+````
 
 2. (Optional) Create a detailed showcase page:
    - Create `src/data/projectShowcases/your-project.ts`
@@ -169,7 +201,7 @@ Dark mode is automatically handled by `next-themes`. The theme toggle is in the 
 
 Edit `src/data/techSkills.ts`:
 
-```typescript
+````typescript
 export const skillCategories: SkillCategory[] = [
   {
     title: "Your Category",
@@ -180,7 +212,48 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
 ];
-```
+```🤝 GitHub Copilot Skills
+
+This project includes **GitHub Copilot Skills** that teach AI assistants about project-specific patterns.
+
+### .github/
+│   ├── skills/                  # GitHub Copilot Skills
+│   │   ├── component-creation/  # Component patterns
+│   │   └── data-content/        # Data architecture patterns
+│   └── copilot-instructions.md  # Project-wide AI guidelines
+├── .husky/                      # Git hooks (pre-commit)
+├── Available Skills
+
+Located in `.github/skills/`:
+
+**component-creation** - Automatically loaded when creating React components
+- Component type patterns (`React.FC<Props>`)
+- Shared component usage (Section, Card, BulletList, IconBadge)
+- Dark mode support patterns
+- File organization & barrel exports
+
+**data-content** - Automatically loaded when adding portfolio content
+- Type-first data architecture (`types → data → component`)
+- Adding projects, education, skills, timeline entries
+- ProjectShowcaseData structure for detailed pages
+
+### How to Use
+
+**Automatic**: Just work naturally - skills load when you mention trigger phrases:
+- "Create a new section component" → `component-creation` loads
+- "Add a new project" → `data-content` loads
+
+**Manual**: Type `/` in Copilot chat to see and select skills
+│   │   └── ui/                  # Shared UI components
+│   │       ├── Section.tsx      # Section wrapper with scroll animation
+│   │       ├── Card.tsx         # Card component
+│   │       ├── BulletList.tsx   # Icon bullet lists
+│   │       ├── IconBadge.tsx    # Icon wrapper
+**Reference**: Say "following the component-creation skill, create..." to explicitly invoke
+
+These skills ensure consistent code patterns and faster development with AI assistance.
+
+##
 
 ### Customizing Animations
 
@@ -323,18 +396,6 @@ npx tsc --noEmit
 npm run lint
 ```
 
-### Dark mode not working
-
-- Ensure `ThemeProvider` is wrapping your app in `_app.tsx`
-- Check that dark mode classes are applied correctly in Tailwind config
-- Clear browser cache and localStorage
-
-### Images not loading
-
-- Verify images exist in `/public/images/`
-- Check image paths in data files (e.g., `site.ts`)
-- Ensure proper file extensions (.jpg, .png, etc.)
-
 ## 🎓 Learning Resources
 
 Built with:
@@ -356,7 +417,7 @@ This is a personal portfolio, but feel free to:
 
 MIT License
 
-Copyright (c) 2024-2026 Anuj Shrestha
+Copyright (c) 2026 Anuj Shrestha
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -379,3 +440,4 @@ SOFTWARE.
 ---
 
 **Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
+````

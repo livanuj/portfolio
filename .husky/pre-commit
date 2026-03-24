@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Load nvm if available
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Add common npm locations to PATH
+export PATH="$HOME/.nvm/versions/node/$(node -v)/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+npm run typecheck
+npx lint-staged
