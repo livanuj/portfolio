@@ -3,11 +3,11 @@ import { IconExternalLink } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
-type ProjectCardProps = {
+type Props = {
   project: Project;
 };
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+export const ProjectCard: React.FC<Props> = ({ project }) => {
   const CardContent = (
     <div className="group relative rounded-lg border-y border-l-4 border-r border-gray-200 border-l-accent-500 bg-white p-6 transition-all hover:shadow-lg dark:border-gray-800 dark:border-l-accent-400 dark:bg-gray-900">
       <div className="flex items-start justify-between gap-4">

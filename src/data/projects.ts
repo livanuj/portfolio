@@ -15,11 +15,12 @@ const professionalProjects: Project[] = [
   {
     title: "LeaveLogic",
     company: "Whitehat Engineering",
-    role: "Lead Frontend Developer",
-    type: "Enterprise HR Platform",
-    period: "Jan 2021 – Jul 2022",
+    role: "Full-stack Developer",
+    type: "Leave Management Platform",
+    period: "Apr 2017 – Mar 2023",
     description:
-      "Led frontend development of a mobile-responsive enterprise leave management platform from scratch. Implemented real-time updates with React Query, built custom calendar interfaces, and designed claims management workflows with multi-section forms and conditional logic.",
+      "Full-stack developer building Ruby on Rails application with benefits calculation engine, API architecture, HR platform integrations. Led React migration in 2021, replacing old frontend of employee portal with modern React application using Material-UI, React Query for server state management, custom calendar interfaces, and multi-section claims workflows.",
+    link: "/work/leavelogic",
     tags: ["React", "React Query", "Material UI", "Ruby on Rails"],
   },
   {

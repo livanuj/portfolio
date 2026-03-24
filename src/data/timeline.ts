@@ -44,7 +44,7 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    company: "LeaveLogic | Whitehat Engineering(US) | Codyssey Web Nepal Pvt. Ltd.(Nepal) ",
+    company: "LeaveLogic (via Whitehat Engineering)",
     location: "Kathmandu, Nepal",
     period: "Apr 2017 – Mar 2023 (6 years)",
     roles: [
@@ -58,8 +58,8 @@ export const experiences: ExperienceItem[] = [
         ],
       },
       {
-        title: "Full Stack Developer",
-        period: "Apr 2017 – Jul 2022",
+        title: "Full-stack Developer",
+        period: "Apr 2017 – Jan 2021",
         highlights: [
           "Built backend services using Ruby on Rails",
           "Designed RESTful APIs",

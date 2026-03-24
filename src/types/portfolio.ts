@@ -11,7 +11,8 @@ export type Project = {
 
 export type ProjectFeature = {
   title: string;
-  description: string;
+  description?: string;
+  bullets?: string[];
   screenshots?: Array<{
     src: string;
     alt: string;

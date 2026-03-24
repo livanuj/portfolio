@@ -1,13 +1,13 @@
 import React from "react";
 import { cn } from "../../utils";
 
-export interface AnimatedDivProps extends React.HTMLAttributes<HTMLDivElement> {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   delay?: string;
   className?: string;
   children: React.ReactNode;
-}
+};
 
-export const AnimatedDiv: React.FC<AnimatedDivProps> = ({
+export const AnimatedDiv: React.FC<Props> = ({
   delay = "0s",
   className = "",
   children,
