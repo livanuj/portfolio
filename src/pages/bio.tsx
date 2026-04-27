@@ -3,6 +3,7 @@ import {
   BioIntro,
   Education,
   OtherSkills,
+  References,
   TechSkills,
   Timeline,
 } from "@/components/sections";
@@ -21,6 +22,7 @@ export default function Bio() {
       <OtherSkills />
       <Timeline />
       <Education />
+      <References />
     </SectionPage>
   );
 }

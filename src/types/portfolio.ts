@@ -54,6 +54,17 @@ export type EducationItem = {
   status?: string;
 };
 
+export type ReferenceItem = {
+  name: string;
+  title: string;
+  company: string;
+  email: string;
+  quote?: string;
+  source?: string;
+  sourceUrl?: string;
+  link?: string;
+};
+
 export type SkillCategory = {
   title: string;
   skills: string[];

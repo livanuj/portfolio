@@ -4,6 +4,7 @@ export const bioPageSections: { id: string; label: string }[] = [
   { id: "other-skills", label: "Specializations" },
   { id: "timeline", label: "Timeline" },
   { id: "education", label: "Education" },
+  { id: "references", label: "References" },
 ];
 
 export const workPageSections: { id: string; label: string }[] = [

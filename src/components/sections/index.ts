@@ -3,6 +3,7 @@ export { Education } from "./Education";
 export { OtherSkills } from "./OtherSkills";
 export { ProjectCard } from "./ProjectCard";
 export { ProjectShowcase } from "./ProjectShowcase";
+export { References } from "./References";
 export { SectionNav } from "./SectionNav";
 export { TechSkills } from "./TechSkills";
 export { Timeline } from "./Timeline";

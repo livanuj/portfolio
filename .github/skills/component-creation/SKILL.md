@@ -200,6 +200,34 @@ import { cn } from "@/utils";
 )}>
 ```
 
+### Reusable Helper Functions
+
+Keep component files focused on rendering and React behavior. When logic is reusable or non-trivial, move it to `src/utils`.
+
+- Put pure parsing, formatting, and transform helpers in `src/utils/`.
+- Export helpers via `src/utils/index.ts` and import them as `@/utils`.
+- Keep helper functions in a component only when they are clearly one-off and tiny.
+- Do not move React-specific logic (state, effects, hooks, JSX) into utils.
+
+Example:
+
+```typescript
+// src/utils/text.ts
+export const quoteLines = (quote: string): string[] =>
+  quote
+    .replace(/\/n/g, "\n")
+    .trim()
+    .split(/\r?\n/g)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+// src/utils/index.ts
+export { quoteLines } from "./text";
+
+// component file
+import { quoteLines } from "@/utils";
+```
+
 ### Common Spacing Patterns
 
 ```typescript
@@ -225,6 +253,7 @@ When creating a new component:
 - [ ] Check if shared components (Section, Card, BulletList, IconBadge) can be used
 - [ ] Add dark mode support to all className declarations
 - [ ] Use `cn()` utility for conditional classes
+- [ ] Move reusable pure helpers to `src/utils/` and export through `src/utils/index.ts`
 - [ ] Import from barrel exports (`@/components/ui`, `@/components/layout`)
 - [ ] Add new component to appropriate barrel export file
 - [ ] Use scroll animation patterns if needed
