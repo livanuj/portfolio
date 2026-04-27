@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconMail, IconPhone } from "@tabler/icons-react";
 import React from "react";
 
 export const Footer: React.FC = () => {
@@ -11,15 +11,25 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} {site.fullName}
           </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
             <a
-              href={`mailto:${site.email}`}
+              href={`mailto:${site.contact.email}`}
               className="flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-accent-600 dark:text-gray-400 dark:hover:text-accent-400"
-              aria-label="Email"
+              aria-label={`Email ${site.contact.email}`}
             >
               <IconMail size={18} />
-              <span className="hidden sm:inline">Email</span>
+              <span>{site.contact.email}</span>
             </a>
+            {site.contact.phone ? (
+              <a
+                href={`tel:${site.contact.phone}`}
+                className="flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-accent-600 dark:text-gray-400 dark:hover:text-accent-400"
+                aria-label={`Call ${site.contact.phone}`}
+              >
+                <IconPhone size={18} />
+                <span>{site.contact.phone}</span>
+              </a>
+            ) : null}
             <a
               href={site.githubUrl}
               target="_blank"

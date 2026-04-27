@@ -67,8 +67,9 @@ export default function Home() {
                   className="flex justify-center gap-6 pt-2 md:justify-start"
                 >
                   <a
-                    href={`mailto:${site.email}`}
+                    href={`mailto:${site.contact.email}`}
                     className="flex items-center gap-2 text-gray-600 transition-colors hover:text-accent-600 dark:text-gray-400 dark:hover:text-accent-400"
+                    aria-label={`Email ${site.contact.email}`}
                   >
                     <IconMail size={20} />
                     <span>Email</span>

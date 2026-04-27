@@ -1,7 +1,10 @@
 export const site = {
   fullName: "Anuj Shrestha",
   location: "Kópavogur, Iceland",
-  email: "livanuj@gmail.com",
+  contact: {
+    email: "livanuj@gmail.com",
+    phone: "+354 8881719",
+  },
   githubUrl: "https://github.com/livanuj",
   linkedinUrl: "https://linkedin.com/in/livanuj",
   profileImage: "/images/profile.jpg",
