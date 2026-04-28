@@ -146,3 +146,39 @@ For detailed guidance on specific tasks, refer to these skills:
   - Integration patterns for new sections
 
 Load these skills when creating components or adding content for comprehensive best practices.
+
+## Feedback loops, browser checks, and TDD
+
+- REQUIRED: Follow a strict TDD-first workflow for all new features, pages, and substantial data changes.
+  - Red → Green → Refactor is mandatory: always write a failing test first, implement the minimal code to make it pass, then refactor.
+  - Start with fast, focused tests (unit or component tests). Add integration or E2E tests when the change impacts navigation, user flows, or cross-page behavior.
+  - For purely data changes (adding projects, education, timeline entries), add or update data-integrity unit tests that assert the new shape/keys and any invariants before applying the change.
+  - For UI or behavior changes, prefer `vitest` + `@testing-library/react` for component-level tests, then use Playwright for end-to-end checks when necessary.
+  - Document the test intent in the pull request description (what to test, why the test fails before code, and what 'green' looks like).
+
+- Feedback loop and run order (recommended):
+  1. Write failing unit/component test(s) or a focused E2E spec (if feature is UX heavy).
+  2. Run the small test subset locally: `npm run test:unit -- <file>` or `npm run test:e2e -- <spec>`.
+  3. Implement the minimum code change to get tests passing.
+  4. Re-run `npx tsc --noEmit && npm run lint` and the targeted tests.
+  5. Run the full unit suite and any related E2E smoke tests.
+  6. Refactor code only after tests are green. Rerun tests after refactor to ensure they still pass.
+
+- CI expectation: PRs must include tests that cover new behavior and the CI must pass `npx tsc --noEmit && npm run lint` plus `npm run test:unit` (and `npm run test:e2e` where applicable). If the change is only content, at minimum data-integrity checks should be added.
+
+- Debugging aids: enable Playwright traces/screenshots on failure in local runs when troubleshooting flaky E2E tests. Keep artifacts out of commits (they should be ignored or removed before pushing).
+
+### Commands
+
+- Unit tests: `npm run test:unit`
+- Unit tests watch mode: `npm run test:unit:watch`
+- E2E tests: `npm run test:e2e`
+- E2E tests with UI: `npm run test:e2e:ui`
+- E2E tests headed: `npm run test:e2e:headed`
+- Dev server: `npm run dev`
+
+Inferred vs. not inferred:
+
+- Inferred: the dev server command comes from `package.json`.
+- Inferred: Vitest is now the unit-test runner from the new `test:unit` scripts and `vitest.config.ts`.
+- Inferred: Playwright is now the E2E runner from the new `test:e2e` scripts and `playwright.config.ts`.

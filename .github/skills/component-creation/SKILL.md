@@ -260,6 +260,23 @@ When creating a new component:
 - [ ] Follow established spacing/layout patterns
 - [ ] Test in both light and dark modes
 
+## TDD Requirement for Component Work
+
+- For any new component or substantial component change, follow a TDD-first approach:
+  - Write failing unit/component tests before implementing the component. Prefer `vitest` + `@testing-library/react` for interactive UI behavior.
+  - Keep tests focused and fast: isolate logic from DOM where practical (move heavy logic into utils and unit-test them).
+  - After tests fail, implement the minimal code to make them pass, then refactor with tests still passing.
+  - Add integration or E2E Playwright tests only when the change affects navigation, multi-component flows, or cross-page behavior.
+  - Include a short test plan in the PR describing the failing tests and the verification steps used to get to green.
+
+## Typical component TDD steps
+
+1. Add unit/component test file under `tests/unit` that imports the component and asserts expected behavior.
+2. Run the targeted tests locally: `npm run test:unit -- tests/unit/MyComponent.test.ts`
+3. Implement the smallest code change to satisfy the tests.
+4. Re-run `npx tsc --noEmit && npm run lint` then the full unit suite.
+5. Add an E2E smoke test only if needed, and run `npm run test:e2e -- <spec>`.
+
 ## Examples in Codebase
 
 Reference these components for patterns:

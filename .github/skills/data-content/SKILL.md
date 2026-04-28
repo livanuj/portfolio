@@ -340,6 +340,21 @@ When adding new content:
 - [ ] Update navigation config if adding new section
 - [ ] Test content renders correctly in both light and dark modes
 
+## TDD Requirement for Data Changes
+
+- All data additions or schema changes must follow a TDD-first approach:
+  - Create or update unit tests that assert data shape, required keys, and any invariants before committing the data change. Use `tests/unit/data-integrity.test.ts` or similar filename.
+  - For new project showcases, add a minimal failing showcase test that asserts the page renders expected headings and key sections (Overview, Key Features, Technologies Used) before implementing the data/page.
+  - Run the targeted unit tests locally, implement the minimal data/page change to make tests pass, then re-run lint and the full test suite.
+  - For breaking schema changes, include migration notes and update any consumers (components) and tests accordingly.
+
+### Example: Adding a Project Showcase (TDD)
+
+1. Create a failing unit test in `tests/unit/data-integrity.test.ts` asserting the new `ProjectShowcaseData` keys and that `portfolioData` contains an entry with `link` pointing to the intended route.
+2. Create a minimal E2E spec under `tests/e2e` that navigates to the new route and expects the H1 and "Overview" heading to be present.
+3. Implement the showcase data file and page component as described in this skill.
+4. Re-run `npx tsc --noEmit && npm run lint`, `npm run test:unit`, and `npm run test:e2e -- tests/e2e/myshowcase.spec.ts`.
+
 ## Benefits of This Pattern
 
 1. **Clean Separation**: Content editors don't need to touch React code
