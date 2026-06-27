@@ -10,7 +10,7 @@ export const skillCategories: SkillCategory[] = [
       "Modern styling (Tailwind CSS, CSS-in-JS)",
       "SEO & Performance optimization",
       "Interface development & UX best practices",
-      "Build tooling & CI/CD",
+      "Rich text editor with ProseMirror core library",
     ],
   },
   {
@@ -31,17 +31,18 @@ export const skillCategories: SkillCategory[] = [
       "Git & GitHub workflows",
       "AWS & Azure cloud services",
       "CI/CD pipelines",
+      "Supabase",
       "Zod validation",
       "Testing (Jest, Cypress, Unit tests)",
     ],
   },
   {
-    title: "Rich Text & Content",
+    title: "AI & Dev Tooling",
     skills: [
-      "ProseMirror core library",
-      "TipTap framework",
-      "TinyMCE integration",
-      "WYSIWYG editor development",
+      "AI-DLC Methodologies using AWS Kiro",
+      "Development with GitHub Copilot and Claude code",
+      "Agent harnessing",
+      "Engineering AI coding workflows",
     ],
   },
 ];

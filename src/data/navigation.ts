@@ -1,3 +1,5 @@
+import { portfolioData } from "./projects";
+
 export const bioPageSections: { id: string; label: string }[] = [
   { id: "intro", label: "Intro" },
   { id: "tech-skills", label: "Tech Skills" },
@@ -7,8 +9,8 @@ export const bioPageSections: { id: string; label: string }[] = [
   { id: "references", label: "References" },
 ];
 
-export const workPageSections: { id: string; label: string }[] = [
+export const workPageSections: { id: keyof typeof portfolioData; label: string }[] = [
   { id: "professional", label: "Professional" },
   { id: "freelance", label: "Freelance" },
-  { id: "demos", label: "Demos" },
+  { id: "sideProject", label: "Side Projects" },
 ];

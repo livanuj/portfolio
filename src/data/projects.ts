@@ -58,21 +58,31 @@ const freelanceProjects: Project[] = [
   },
 ];
 
-// const demoProjects: Project[] = [
-//   {
-//     title: "Workflow Builder",
-//     role: "Personal Project",
-//     type: "Interactive Demo",
-//     period: "2024",
-//     description:
-//       "An interactive drag-and-drop workflow builder showcasing complex state management, dynamic UI updates, and real-time validation. Features reorderable steps, inline editing, and system design patterns used in enterprise applications.",
-//     link: "/workflow-builder",
-//     tags: ["React", "TypeScript", "Zustand", "dnd-kit", "Zod"],
-//   },
-// ];
+const sideProjects: Project[] = [
+  {
+    title: "WTRA - Running Events Directory",
+    role: "AI-DLC Workshop",
+    type: "Event by AWS",
+    period: "2026",
+    description:
+      "Designed and built a full-stack SEO-first directory for discovering running events in three hours, end to end from PRD to deployment, using the AI-DLC (AI-driven development lifecycle) methodology. Built with Next.js 15, TypeScript, Tailwind, and Supabase (Postgres, full-text search, auth); implemented server-side search and filtering, JSON-LD structured data for search/AI discoverability, and an admin dashboard for event publishing.",
+    link: "https://wtra.livanuj.dev/",
+    tags: ["React", "TypeScript", "Tailwind", "Supabase", "Zod"],
+  },
+  {
+    title: "Ghost Run Delta Mapper",
+    role: "Solo project",
+    type: "Harnessing AI agents",
+    period: "2026",
+    description:
+      "Built a local-first running analytics tool that compares a current run against a previous run on the same track using Strava's GPX data, visualizing pace deltas across the route on an interactive Mapbox map. Designed and implemented the full pipeline: GPX parsing, temporal alignment between runs of different lengths, fixed-distance segmentation, and delta/zone classification (green/yellow/red) with route-divergence handling for mismatched geometries.  Built with React, TypeScript, Vite, and a Node.js API; includes an animated playback overlay with live segment stats, full test coverage (unit + Playwright E2E), and CI. Deployed live to Vercel; planning to integration into WTRA to let runners compare current year's racing performance against last year's in the same event.",
+    link: "https://ghostrun.livanuj.dev/",
+    tags: ["React", "TypeScript", "Tailwind", "Supabase", "Zod"],
+  },
+];
 
 export const portfolioData = {
   professional: professionalProjects,
   freelance: freelanceProjects,
-  // demos: demoProjects,
+  sideProject: sideProjects,
 };
