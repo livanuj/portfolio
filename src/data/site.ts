@@ -14,6 +14,6 @@ export const site = {
       "Senior full-stack developer specializing in React, TypeScript, and modern web development.",
     role: "Senior Full-Stack Developer",
     intro:
-      "Senior full-stack developer with 9+ years of experience building scalable, enterprise-grade web applications and internal platforms. Specializing in React, TypeScript, and modern frontend architecture.",
+      "Senior full-stack engineer with 9+ years of experience and a frontend specialism across React, TypeScript, Ruby on Rails, Elixir, and Node.js. I step into work that needs both engineering depth and product thinking, not just execution.",
   },
 } as const;

@@ -1,6 +1,8 @@
 export const bioIntroParagraphs: string[] = [
-  "I'm a full-stack developer with 9+ years of experience building scalable, enterprise-grade web applications and internal platforms.",
-  "I specialize in React, TypeScript, and modern frontend architecture, with extensive experience translating complex backend APIs into intuitive user experiences. My work spans building type-safe, scalable UI systems, implementing complex form systems and workflow engines, and developing rich-text editors.",
-  "Currently pursuing a Master's degree in Computer Science at Háskóli Íslands (University of Iceland), with a thesis focused on user experience analysis using AI. I'm actively keeping up with the latest advancements in AI and development workflows, leveraging tools like GitHub Copilot, Claude, and ChatGPT for AI-assisted programming, rapid prototyping, and efficient debugging to enhance productivity while maintaining high code quality.",
-  "Beyond coding, I bring experience in end-to-end feature ownership, cross-functional collaboration, and sharing information with team members. I thrive on solving complex technical challenges and continuously learning new technologies.",
+  "I'm a full-stack engineer with 9+ years of experience and a strong frontend specialism across React, TypeScript, Ruby on Rails, Elixir, and Node.js.",
+  "Steps up for the work that needs both engineering depth and product thinking - not just ticket execution.",
+  "Joined Taktikal when clients were queuing weekly requests for a developer to update their forms. Left with SmartFlows - a self-service platform that removed that bottleneck entirely, freed a full developer role, and increased the customer base. Worked across the stack: frontend architecture, conditional logic engines, rich-text editors, and managing the NoSQL data layer behind it all.",
+  "Works best in small, high-ownership teams where work is genuinely hard, and product decisions matter beyond ticket execution.",
+  "I also use AI the way a senior engineer should: by setting structured Copilot instructions that reinforce architectural standards and by applying AI-driven UX analysis in my MSc thesis at the University of Iceland, and full-stack projects built solo using AI-DLC workflows.",
+  "The sort of developer for whom the CCO voluntarily writes a glowing recommendation on LinkedIn.",
 ];
