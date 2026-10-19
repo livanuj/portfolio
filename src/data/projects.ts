@@ -84,6 +84,16 @@ const sideProjects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind", "mapbox-gl"],
   },
   {
+    title: "Grocery List",
+    role: "Product owner",
+    type: "Built with Kiro (AI-DLC)",
+    period: "2026",
+    description:
+      "A grocery list my partner and I use every day, organized by store, with a combined view of everything left to buy and a finish-trip flow that carries unbought items to the next trip. Built entirely by Kiro. I described what I wanted, reviewed the requirements and tasks, and tested it end to end.",
+    link: "/work/grocery-list",
+    tags: ["React", "TypeScript", "Tailwind", "Supabase", "IndexedDB", "dnd-kit"],
+  },
+  {
     title: "Homemade UNO",
     role: "Product owner",
     type: "Built with Claude Code",
