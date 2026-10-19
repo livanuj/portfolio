@@ -22,6 +22,13 @@ export const Education: React.FC = () => {
                   {edu.period}
                 </div>
                 {edu.status && <p className="mt-2 text-sm italic text-gray-500">{edu.status}</p>}
+                {edu.details && edu.details.length > 0 && (
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-500">
+                    {edu.details.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </Card>

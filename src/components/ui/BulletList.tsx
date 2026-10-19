@@ -1,5 +1,5 @@
 import { cn } from "@/utils";
-import { IconCheck } from "@tabler/icons-react";
+import { IconCaretRight, IconCheck } from "@tabler/icons-react";
 import React from "react";
 
 type Props = {
@@ -18,7 +18,9 @@ export const BulletList: React.FC<Props> = (props) => {
           {icon === "check" ? (
             <IconCheck size={20} className="mt-0.5 flex-shrink-0 text-accent-600" />
           ) : (
-            <span className="mt-1 text-accent-600">▹</span>
+            <span className="flex h-[1.625em] flex-shrink-0 items-center text-accent-600">
+              <IconCaretRight size={16} />
+            </span>
           )}
           <span className="leading-relaxed text-gray-700">{item}</span>
         </li>

@@ -1,5 +1,5 @@
 import type { ProjectShowcaseData } from "@/types/portfolio";
-import { IconArrowLeft, IconExternalLink } from "@tabler/icons-react";
+import { IconArrowLeft, IconCaretRight, IconExternalLink } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -132,7 +132,9 @@ export const ProjectShowcase: React.FC<Props> = ({ data }) => {
           <ul className="space-y-3">
             {data.achievements.map((achievement, index) => (
               <li key={index} className="flex items-start text-gray-700">
-                <span className="mr-3 mt-0.5 flex-shrink-0 select-none text-accent-600">▹</span>
+                <span className="mr-3 flex h-[1.5em] flex-shrink-0 select-none items-center text-accent-600">
+                  <IconCaretRight size={16} />
+                </span>
                 <span>{achievement}</span>
               </li>
             ))}
