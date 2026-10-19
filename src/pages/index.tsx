@@ -24,6 +24,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/55 lg:hidden" />
         {/* lg+: keep the left (person) bright, darken the right behind the text */}
         <div className="absolute inset-0 hidden bg-gradient-to-r from-black/10 from-20% via-black/50 via-50% to-black/80 lg:block" />
+        <p className="absolute bottom-3 right-4 text-xs text-white/60">
+          Photo by {site.bannerImage.credit}
+        </p>
 
         <div className="container relative mx-auto px-4 py-16">
           <div className="mx-auto max-w-xl space-y-6 text-center lg:mr-0 lg:text-left">

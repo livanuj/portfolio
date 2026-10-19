@@ -11,6 +11,7 @@ export const site = {
   bannerImage: {
     src: "/images/banner.webp",
     alt: "Anuj standing on a riverbed in front of green mountains in Iceland",
+    credit: "Swetha Pauline",
   },
   home: {
     metaTitle: "Anuj Shrestha | Full-Stack Developer",
