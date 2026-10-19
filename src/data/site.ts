@@ -9,8 +9,7 @@ export const site = {
   linkedinUrl: "https://linkedin.com/in/livanuj",
   profileImage: "/images/profile.webp",
   bannerImage: {
-    widths: [768, 1280, 1920, 2560],
-    src: (width: number) => `/images/banner-${width}.webp`,
+    src: "/images/banner.webp",
     alt: "Anuj standing on a riverbed in front of green mountains in Iceland",
   },
   home: {

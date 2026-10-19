@@ -10,15 +10,13 @@ export default function Home() {
     <Layout title={site.home.metaTitle} description={site.home.metaDescription}>
       {/* Header is 73px tall; the background photo fills the rest of the first screen */}
       <section className="relative flex min-h-[calc(100svh-73px)] items-center overflow-hidden bg-gray-900">
-        {/* Static export disables next/image optimization, so responsive variants are pre-generated */}
+        {/* Static export disables next/image optimization; a single 1920px image covers all screens */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={site.bannerImage.src(1920)}
-          srcSet={site.bannerImage.widths.map((w) => `${site.bannerImage.src(w)} ${w}w`).join(", ")}
-          sizes="100vw"
+          src={site.bannerImage.src}
           alt=""
-          width={2560}
-          height={1440}
+          width={1920}
+          height={1080}
           // Below lg there is no room beside the content, so crop to the mountains (person out of frame)
           className="absolute inset-0 h-full w-full object-cover object-[85%_center] lg:object-[10%_center]"
         />
