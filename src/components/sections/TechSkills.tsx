@@ -8,9 +8,7 @@ export const TechSkills: React.FC = () => {
       <div className="grid grid-cols-1 gap-10 transition-all delay-100 duration-700 md:grid-cols-2">
         {skillCategories.map((category) => (
           <div key={category.title}>
-            <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-gray-100">
-              {category.title}
-            </h3>
+            <h3 className="mb-4 text-xl font-semibold text-gray-900">{category.title}</h3>
             <BulletList items={category.skills} icon="arrow" />
           </div>
         ))}

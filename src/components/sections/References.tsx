@@ -30,16 +30,14 @@ export const References: React.FC = () => {
                 <div className="relative space-y-5">
                   <div className="flex items-start justify-between gap-4 pt-1">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                        {reference.name}
-                      </h3>
-                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                      <h3 className="text-lg font-semibold text-gray-900">{reference.name}</h3>
+                      <p className="mt-1 text-sm text-gray-600">
                         {reference.title} · {reference.company}
                       </p>
                     </div>
 
                     {normalizedQuote && (
-                      <div className="dark:bg-accent-950/30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600 ring-1 ring-accent-100 dark:text-accent-300 dark:ring-accent-900/50">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600 ring-1 ring-accent-100">
                         <IconQuote size={20} />
                       </div>
                     )}
@@ -48,7 +46,7 @@ export const References: React.FC = () => {
                   {normalizedQuote ? (
                     <div className="relative">
                       <blockquote
-                        className={`rounded-2xl border border-gray-200 bg-gray-50/80 px-4 py-4 text-lg leading-relaxed text-gray-700 transition-all duration-300 ease-in-out dark:border-gray-800 dark:bg-gray-900/60 dark:text-gray-300 ${
+                        className={`rounded-2xl border border-gray-200 bg-gray-50/80 px-4 py-4 text-lg leading-relaxed text-gray-700 transition-all duration-300 ease-in-out ${
                           quoteHasOverflow && !isExpanded
                             ? "max-h-[7.75rem] overflow-hidden"
                             : "max-h-[40rem]"
@@ -70,7 +68,7 @@ export const References: React.FC = () => {
                       </blockquote>
 
                       {quoteHasOverflow && !isExpanded && (
-                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 rounded-b-2xl bg-gradient-to-t from-gray-50/95 to-transparent dark:from-gray-900/95" />
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 rounded-b-2xl bg-gradient-to-t from-gray-50/95 to-transparent" />
                       )}
                     </div>
                   ) : null}
@@ -81,7 +79,7 @@ export const References: React.FC = () => {
                         <button
                           type="button"
                           onClick={() => toggleReferenceQuote(referenceId)}
-                          className="inline-flex items-center text-sm font-medium text-accent-600 transition-colors hover:text-accent-700 hover:underline dark:text-accent-400 dark:hover:text-accent-300"
+                          className="inline-flex items-center text-sm font-medium text-accent-600 transition-colors hover:text-accent-700 hover:underline"
                         >
                           {isExpanded ? "Show less" : "Read full reference"}
                         </button>
@@ -96,13 +94,13 @@ export const References: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`Open ${reference.source || "LinkedIn recommendation"} for ${reference.name}`}
-                            className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-accent-600 dark:bg-gray-900/60 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-accent-400"
+                            className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-accent-600"
                           >
                             <IconBrandLinkedin size={16} />
                             <span>{reference.source || "LinkedIn recommendation"}</span>
                           </a>
                         ) : (
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600 dark:bg-gray-900/60 dark:text-gray-400">
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600">
                             <IconBrandLinkedin size={16} />
                             <span>{reference.source}</span>
                           </span>
@@ -114,7 +112,7 @@ export const References: React.FC = () => {
                   <div className="flex flex-wrap items-center gap-3 text-sm">
                     <a
                       href={`mailto:${reference.email}`}
-                      className="inline-flex items-center gap-1.5 font-medium text-accent-700 hover:underline dark:text-accent-300"
+                      className="inline-flex items-center gap-1.5 font-medium text-accent-700 hover:underline"
                     >
                       <IconMail size={15} />
                       <span>{reference.email}</span>
@@ -126,7 +124,7 @@ export const References: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Open LinkedIn profile for ${reference.name}`}
-                        className="inline-flex items-center text-accent-700 transition-colors hover:text-accent-600 dark:text-accent-300 dark:hover:text-accent-200"
+                        className="inline-flex items-center text-accent-700 transition-colors hover:text-accent-600"
                       >
                         <IconBrandLinkedin size={24} />
                       </a>
@@ -142,19 +140,17 @@ export const References: React.FC = () => {
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent-500 via-cyan-400 to-emerald-400" />
               <div className="flex items-start justify-between gap-4 pt-1">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                    References
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <h3 className="text-lg font-semibold text-gray-900">References</h3>
+                  <p className="mt-1 text-sm text-gray-600">
                     Professional references can be shared on request.
                   </p>
                 </div>
-                <div className="dark:bg-accent-950/30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600 ring-1 ring-accent-100 dark:text-accent-300 dark:ring-accent-900/50">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600 ring-1 ring-accent-100">
                   <IconQuote size={20} />
                 </div>
               </div>
-              <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50/60 px-4 py-4 dark:border-gray-800 dark:bg-gray-900/40">
-                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50/60 px-4 py-4">
+                <p className="text-sm leading-relaxed text-gray-600">
                   Add reference entries to{" "}
                   <span className="font-medium">src/data/references.ts</span>, with or without a
                   quote.

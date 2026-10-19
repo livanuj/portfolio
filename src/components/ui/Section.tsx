@@ -19,7 +19,7 @@ export const Section: React.FC<Props> = (props) => {
       <div className={cn("mx-auto px-4", `max-w-${maxWidth}`)} ref={ref}>
         <h2
           className={cn(
-            "mb-8 text-3xl font-bold text-gray-900 transition-all duration-700 dark:text-gray-100",
+            "mb-8 text-3xl font-bold text-gray-900 transition-all duration-700",
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
         >

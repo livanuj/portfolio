@@ -31,14 +31,13 @@ export const experiences: ExperienceItem[] = [
   {
     company: "Háskóli Íslands (University of Iceland)",
     location: "Reykjavík, Iceland",
-    period: "Aug 2022 – present",
+    period: "Aug 2022 – Oct 2026",
     roles: [
       {
         title: "Master's Student in Computer Science",
         period: "",
         highlights: [
-          "Pursuing MSc in Computer Science with thesis on user experience analysis using AI",
-          "Completed coursework in software engineering, Cloud computing, Distributed Systems, Machine Learning etc.",
+          "MSc in Computer Science with thesis on AI-assisted usability feedback analysis",
         ],
       },
     ],

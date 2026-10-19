@@ -52,6 +52,7 @@ export type EducationItem = {
   location: string;
   period: string;
   status?: string;
+  details?: string[];
 };
 
 export type ReferenceItem = {

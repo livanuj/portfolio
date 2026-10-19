@@ -27,15 +27,15 @@ export const smartflowData: ProjectShowcaseData = {
         "logic ensuring forms adapt intelligently to user responses.",
       screenshots: [
         {
-          src: "/screenshots/smartflow/sm-flow-editor.png",
+          src: "/screenshots/smartflow/sm-flow-editor.webp",
           alt: "Form Builder",
         },
         {
-          src: "/screenshots/smartflow/sm-fields-with-clarification.png",
+          src: "/screenshots/smartflow/sm-fields-with-clarification.webp",
           alt: "Dynamic Form Builder with Clarification System",
         },
         {
-          src: "/screenshots/smartflow/sm-clarification-demo.gif",
+          src: "/screenshots/smartflow/sm-clarification-demo.webp",
           alt: "Clarification System Demo Animation",
         },
       ],
@@ -51,11 +51,11 @@ export const smartflowData: ProjectShowcaseData = {
         "Allows non-technical users to create complex documents with dynamic content.",
       screenshots: [
         {
-          src: "/screenshots/smartflow/sm-doc-editor.png",
+          src: "/screenshots/smartflow/sm-doc-editor.webp",
           alt: "Rich Text Document Editor",
         },
         {
-          src: "/screenshots/smartflow/sm-document-editor.gif",
+          src: "/screenshots/smartflow/sm-document-editor.webp",
           alt: "Rich Text Document Editor Demo",
         },
       ],
@@ -70,11 +70,11 @@ export const smartflowData: ProjectShowcaseData = {
         "for creating intelligent, adaptive forms.",
       screenshots: [
         {
-          src: "/screenshots/smartflow/sm-conditional-logic.png",
+          src: "/screenshots/smartflow/sm-conditional-logic.webp",
           alt: "Conditional Logic Rule in Form Builder",
         },
         {
-          src: "/screenshots/smartflow/sm-conditional-logic-editor.png",
+          src: "/screenshots/smartflow/sm-conditional-logic-editor.webp",
           alt: "Conditional Logic Rule Editor",
         },
       ],

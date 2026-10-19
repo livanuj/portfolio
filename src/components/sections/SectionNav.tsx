@@ -14,7 +14,7 @@ type Props = {
 
 export const SectionNav: React.FC<Props> = ({ sections, activeSection, onSectionClick }) => {
   return (
-    <div className="sticky top-[73px] z-40 hidden border-b border-gray-200 bg-white transition-colors dark:border-gray-800 dark:bg-gray-900 md:block">
+    <div className="sticky top-[73px] z-40 hidden border-b border-gray-200 bg-white transition-colors md:block">
       <div className="container mx-auto px-4">
         <nav className="scrollbar-hide flex gap-2 overflow-x-auto py-4">
           {sections.map((section) => (
@@ -25,7 +25,7 @@ export const SectionNav: React.FC<Props> = ({ sections, activeSection, onSection
                 "whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors",
                 activeSection === section.id
                   ? "bg-accent-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700",
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200",
               )}
             >
               {section.label}
