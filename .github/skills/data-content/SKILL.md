@@ -133,7 +133,7 @@ export const myProjectData: ProjectShowcaseData = {
       bullets: ["Key point 1", "Key point 2", "Key point 3"],
       screenshots: [
         {
-          src: "/screenshots/myproject/feature-1.png",
+          src: "/screenshots/myproject/feature-1.webp",
           alt: "Feature screenshot description",
         },
       ],
@@ -189,7 +189,7 @@ Update the project in `src/data/projects.ts`:
    ```typescript
    screenshots: [
      {
-       src: "/screenshots/projectname/feature.png",
+       src: "/screenshots/projectname/feature.webp",
        alt: "Descriptive alt text for accessibility",
      },
    ];
