@@ -3,9 +3,10 @@ export type Project = {
   company?: string;
   role: string;
   type: string;
-  period: string;
+  period?: string;
   description: string;
   link?: string;
+  links?: { label: string; url: string }[];
   tags?: string[];
 };
 
@@ -17,17 +18,21 @@ export type ProjectFeature = {
     src: string;
     alt: string;
   }>;
+  // "phone" shows portrait screenshots side by side instead of stacked full width
+  screenshotLayout?: "phone";
 };
 
 export type ProjectShowcaseData = {
   title: string;
-  company: string;
+  company?: string;
   role: string;
-  period: string;
+  period?: string;
   type: string;
-  overview: string;
+  // An array renders as separate paragraphs
+  overview: string | string[];
   link?: string;
   features: ProjectFeature[];
+  featuresTitle?: string;
   technologies: string[];
   achievements: string[];
   backLink?: string;
