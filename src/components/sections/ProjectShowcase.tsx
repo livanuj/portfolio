@@ -8,7 +8,21 @@ type Props = {
   data: ProjectShowcaseData;
 };
 
+// Static class names so Tailwind can find them
+const metaGridCols: Record<number, string> = {
+  2: "md:grid-cols-2",
+  3: "md:grid-cols-3",
+  4: "md:grid-cols-4",
+};
+
 export const ProjectShowcase: React.FC<Props> = ({ data }) => {
+  const meta = [
+    { label: "Company", value: data.company },
+    { label: "Role", value: data.role },
+    { label: "Period", value: data.period },
+    { label: "Type", value: data.type },
+  ].filter((item) => item.value);
+
   return (
     <div className="mx-auto max-w-4xl">
       <Link
@@ -35,36 +49,32 @@ export const ProjectShowcase: React.FC<Props> = ({ data }) => {
           )}
         </div>
 
-        <div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-          <div>
-            <p className="mb-1 text-sm text-gray-600">Company</p>
-            <p className="font-semibold text-gray-900">{data.company}</p>
-          </div>
-          <div>
-            <p className="mb-1 text-sm text-gray-600">Role</p>
-            <p className="font-semibold text-gray-900">{data.role}</p>
-          </div>
-          <div>
-            <p className="mb-1 text-sm text-gray-600">Period</p>
-            <p className="font-semibold text-gray-900">{data.period}</p>
-          </div>
-          <div>
-            <p className="mb-1 text-sm text-gray-600">Type</p>
-            <p className="font-semibold text-gray-900">{data.type}</p>
-          </div>
+        <div className={`mb-6 grid grid-cols-2 gap-4 ${metaGridCols[meta.length]}`}>
+          {meta.map((item) => (
+            <div key={item.label}>
+              <p className="mb-1 text-sm text-gray-600">{item.label}</p>
+              <p className="font-semibold text-gray-900">{item.value}</p>
+            </div>
+          ))}
         </div>
       </div>
 
       <section className="mb-16">
         <h2 className="mb-4 text-2xl font-bold text-gray-900">Overview</h2>
-        <div className="max-w-none">
-          <p className="leading-relaxed text-gray-700">{data.overview}</p>
+        <div className="max-w-none space-y-4">
+          {(Array.isArray(data.overview) ? data.overview : [data.overview]).map((paragraph) => (
+            <p key={paragraph} className="leading-relaxed text-gray-700">
+              {paragraph}
+            </p>
+          ))}
         </div>
       </section>
 
       {data.features.length > 0 && (
         <section className="mb-16">
-          <h2 className="mb-8 text-2xl font-bold text-gray-900">Key Features & Contributions</h2>
+          <h2 className="mb-8 text-2xl font-bold text-gray-900">
+            {data.featuresTitle ?? "Key Features & Contributions"}
+          </h2>
 
           {data.features.map((feature, index) => (
             <div key={index} className="mb-12">
@@ -85,26 +95,43 @@ export const ProjectShowcase: React.FC<Props> = ({ data }) => {
                 </ul>
               )}
 
-              {feature.screenshots && feature.screenshots.length > 0 && (
-                <div className="space-y-4">
-                  {feature.screenshots.map((screenshot, screenshotIndex) => {
-                    return (
-                      <div
-                        key={screenshotIndex}
-                        className="overflow-hidden rounded-lg border border-gray-200"
-                      >
-                        <Image
-                          src={screenshot.src}
-                          alt={screenshot.alt}
-                          width={1200}
-                          height={675}
-                          className="h-auto w-full"
-                        />
-                      </div>
-                    );
-                  })}
+              {feature.screenshotLayout === "phone" && feature.screenshots && (
+                <div className="-mx-4 flex gap-4 overflow-x-auto px-4 pb-2">
+                  {feature.screenshots.map((screenshot) => (
+                    <Image
+                      key={screenshot.src}
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      width={600}
+                      height={1298}
+                      className="w-56 flex-shrink-0 rounded-2xl border border-gray-200 shadow-sm sm:w-64"
+                    />
+                  ))}
                 </div>
               )}
+
+              {feature.screenshotLayout !== "phone" &&
+                feature.screenshots &&
+                feature.screenshots.length > 0 && (
+                  <div className="space-y-4">
+                    {feature.screenshots.map((screenshot, screenshotIndex) => {
+                      return (
+                        <div
+                          key={screenshotIndex}
+                          className="overflow-hidden rounded-lg border border-gray-200"
+                        >
+                          <Image
+                            src={screenshot.src}
+                            alt={screenshot.alt}
+                            width={1200}
+                            height={675}
+                            className="h-auto w-full"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
             </div>
           ))}
         </section>

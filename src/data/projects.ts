@@ -65,19 +65,42 @@ const sideProjects: Project[] = [
     type: "Event by AWS",
     period: "2026",
     description:
-      "Designed and built a full-stack SEO-first directory for discovering running events in three hours, end to end from PRD to deployment, using the AI-DLC (AI-driven development lifecycle) methodology. Built with Next.js 15, TypeScript, Tailwind, and Supabase (Postgres, full-text search, auth); implemented server-side search and filtering, JSON-LD structured data for search/AI discoverability, and an admin dashboard for event publishing.",
+      "Designed and built a full-stack SEO-first directory for discovering running events, end to end from PRD to deployment, using the AI-DLC (AI Development Life Cycle) framework. Built with Next.js 15, TypeScript, Tailwind, and Supabase. Built solo, from PRD to deployed MVP, in about three hours. Phase 2, in progress: rebuilding the database layer and additional features in Elixir.",
     link: "https://wtra.livanuj.dev/",
-    tags: ["React", "TypeScript", "Tailwind", "Supabase", "Zod"],
+    links: [
+      { label: "Phase 1 · Next.js MVP", url: "https://wtra.livanuj.dev/" },
+      { label: "Phase 2 · Elixir (in progress)", url: "https://wtra-dev.livanuj.dev/" },
+    ],
+    tags: ["React", "TypeScript", "Tailwind", "Supabase", "Zod", "Elixir", "Phoenix"],
   },
   {
-    title: "Ghost Run Delta Mapper",
+    title: "Ghost Run Mapper",
     role: "Solo project",
     type: "Harnessing AI agents",
     period: "2026",
     description:
-      "Built a local-first running analytics tool that compares a current run against a previous run on the same track using Strava's GPX data, visualizing pace deltas across the route on an interactive Mapbox map. Designed and implemented the full pipeline: GPX parsing, temporal alignment between runs of different lengths, fixed-distance segmentation, and delta/zone classification (green/yellow/red) with route-divergence handling for mismatched geometries.  Built with React, TypeScript, Vite, and a Node.js API; includes an animated playback overlay with live segment stats, full test coverage (unit + Playwright E2E), and CI. Deployed live to Vercel; planning to integration into WTRA to let runners compare current year's racing performance against last year's in the same event.",
+      "Race your own past self. Pick two runs on the same route and see exactly where you were faster or slower, not just your overall pace. Takes two GPX files exported from Strava and renders the pace comparison on an interactive Mapbox map. Built with React, TypeScript, Vite and a Node.js API, using an AI agent harness through a TDD workflow. Deployed live to Vercel. Plan to merge this into WTRA syncing with Strava, instead of a manual GPX upload.",
     link: "https://ghostrun.livanuj.dev/",
-    tags: ["React", "TypeScript", "Tailwind", "Supabase", "Zod"],
+    tags: ["React", "TypeScript", "Tailwind", "mapbox-gl"],
+  },
+  {
+    title: "Homemade UNO",
+    role: "Product owner",
+    type: "Built with Claude Code",
+    period: "2026",
+    description:
+      "Real-time multiplayer Uno for playing with friends on any device, with a 2v2 Team mode where partners see each other's cards and play together, something I couldn't find in most Uno games. Built entirely by Claude Code. I didn't write or review the code; I described what I wanted and tested it end to end.",
+    link: "/work/homemade-uno",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Supabase",
+      "Realtime",
+      "Edge Functions",
+      "Motion",
+      "PWA",
+    ],
   },
 ];
 

@@ -8,20 +8,31 @@ type Props = {
 };
 
 export const ProjectCard: React.FC<Props> = ({ project }) => {
-  const CardContent = (
+  return (
     <div className="group relative rounded-lg border-y border-l-4 border-r border-gray-200 border-l-accent-500 bg-white p-6 transition-all hover:shadow-lg">
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
           <h3 className="text-xl font-bold text-gray-900 transition-colors group-hover:text-accent-600">
-            {project.title}
+            {project.link ? (
+              // Stretched link: covers the whole card so it stays clickable, while extra links sit above it
+              <Link href={project.link} className="after:absolute after:inset-0">
+                {project.title}
+              </Link>
+            ) : (
+              project.title
+            )}
           </h3>
           {project.company && <p className="mt-1 font-medium text-accent-600">{project.company}</p>}
           <div className="mt-2 flex flex-wrap gap-3 text-sm text-gray-600">
             <span>{project.role}</span>
             <span>•</span>
             <span>{project.type}</span>
-            <span>•</span>
-            <span>{project.period}</span>
+            {project.period && (
+              <>
+                <span>•</span>
+                <span>{project.period}</span>
+              </>
+            )}
           </div>
         </div>
         {project.link && (
@@ -32,6 +43,20 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
         )}
       </div>
       <p className="mt-4 leading-relaxed text-gray-700">{project.description}</p>
+      {project.links && project.links.length > 0 && (
+        <div className="relative z-10 mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          {project.links.map((link) => (
+            <Link
+              key={link.url}
+              href={link.url}
+              className="inline-flex items-center gap-1.5 font-medium text-accent-600 hover:text-accent-700 hover:underline"
+            >
+              <IconExternalLink size={16} />
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
       {project.tags && project.tags.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
@@ -46,14 +71,4 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
       )}
     </div>
   );
-
-  if (project.link) {
-    return (
-      <Link href={project.link} className="block">
-        {CardContent}
-      </Link>
-    );
-  }
-
-  return CardContent;
 };
