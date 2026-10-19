@@ -8,6 +8,11 @@ export const site = {
   githubUrl: "https://github.com/livanuj",
   linkedinUrl: "https://linkedin.com/in/livanuj",
   profileImage: "/images/profile.webp",
+  bannerImage: {
+    widths: [768, 1280, 1920, 2560],
+    src: (width: number) => `/images/banner-${width}.webp`,
+    alt: "Anuj standing on a riverbed in front of green mountains in Iceland",
+  },
   home: {
     metaTitle: "Anuj Shrestha | Full-Stack Developer",
     metaDescription:
