@@ -16,14 +16,11 @@ export const BulletList: React.FC<Props> = (props) => {
       {items.map((item, index) => (
         <li key={index} className="flex items-start gap-2">
           {icon === "check" ? (
-            <IconCheck
-              size={20}
-              className="mt-0.5 flex-shrink-0 text-accent-600 dark:text-accent-400"
-            />
+            <IconCheck size={20} className="mt-0.5 flex-shrink-0 text-accent-600" />
           ) : (
-            <span className="mt-1 text-accent-600 dark:text-accent-400">▹</span>
+            <span className="mt-1 text-accent-600">▹</span>
           )}
-          <span className="leading-relaxed text-gray-700 dark:text-gray-300">{item}</span>
+          <span className="leading-relaxed text-gray-700">{item}</span>
         </li>
       ))}
     </ul>

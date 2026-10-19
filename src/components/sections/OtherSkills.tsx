@@ -32,12 +32,8 @@ export const OtherSkills: React.FC = () => {
                   <IconComponent size={24} />
                 </IconBadge>
                 <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
-                    {skill.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                    {skill.description}
-                  </p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-900">{skill.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{skill.description}</p>
                 </div>
               </div>
             </Card>

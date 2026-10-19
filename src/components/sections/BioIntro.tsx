@@ -11,8 +11,8 @@ export const BioIntro: React.FC = () => {
             key={i}
             className={
               i < bioIntroParagraphs.length - 1
-                ? "mb-4 leading-relaxed text-gray-700 dark:text-gray-300"
-                : "leading-relaxed text-gray-700 dark:text-gray-300"
+                ? "mb-4 leading-relaxed text-gray-700"
+                : "leading-relaxed text-gray-700"
             }
           >
             {text}

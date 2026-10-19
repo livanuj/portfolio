@@ -17,7 +17,7 @@ export const Layout: React.FC<Props> = ({ children, title, description }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {description && <meta name="description" content={description} />}
       </Head>
-      <div className="min-h-screen bg-white transition-colors dark:bg-gray-900">
+      <div className="min-h-screen bg-white transition-colors">
         <Header />
         <main>{children}</main>
         <Footer />
