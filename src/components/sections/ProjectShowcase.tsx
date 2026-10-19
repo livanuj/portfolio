@@ -101,7 +101,6 @@ export const ProjectShowcase: React.FC<Props> = ({ data }) => {
               {feature.screenshots && feature.screenshots.length > 0 && (
                 <div className="space-y-4">
                   {feature.screenshots.map((screenshot, screenshotIndex) => {
-                    const isGif = screenshot.src.toLowerCase().endsWith(".gif");
                     return (
                       <div
                         key={screenshotIndex}
@@ -113,7 +112,6 @@ export const ProjectShowcase: React.FC<Props> = ({ data }) => {
                           width={1200}
                           height={675}
                           className="h-auto w-full"
-                          unoptimized={isGif}
                         />
                       </div>
                     );

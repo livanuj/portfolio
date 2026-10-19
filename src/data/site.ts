@@ -7,7 +7,7 @@ export const site = {
   },
   githubUrl: "https://github.com/livanuj",
   linkedinUrl: "https://linkedin.com/in/livanuj",
-  profileImage: "/images/profile.jpg",
+  profileImage: "/images/profile.webp",
   home: {
     metaTitle: "Anuj Shrestha | Full-Stack Developer",
     metaDescription:
